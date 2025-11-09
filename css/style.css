@@ -1,0 +1,1167 @@
+:root {
+    --primary-bg-start: #D8D1C1;
+    --primary-bg-end: #E7E4DC;
+    --header-bg-color: rgba(255,255,255,0.9); /* lichte transparantie */
+    --footer-bg-color: rgba(92,58,33,0.9);   /* lichte transparantie */
+    --font-family: 'Helvetica', sans-serif;
+    --btn-bg: #5C3A21;
+    --btn-color: #fff;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+/* ===============================
+   BODY — Luxe subtiel bewegend kleurverloop
+=============================== */
+body {
+    margin: 0;
+    font-family: "Helvetica", sans-serif;
+    color: #3b3b3b;
+    background: linear-gradient(
+        to bottom,
+        #d8d1c1 0%,
+        #dad5c8 20%,
+        #ddd7ca 40%,
+        #e1dcd3 60%,
+        #e5e2da 80%,
+        #e7e4dc 100%
+    );
+    background-size: 100% 200%;
+    animation: softGradientMove 15s ease-in-out infinite alternate;
+    transition: background 1.5s ease;
+    overflow-x: hidden;
+}
+/* =========================
+   TYPOGRAFIE & TEKST DESIGN
+========================= */
+
+/* Basis body tekst */
+body, p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #3b3b3b;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Koppen */
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #5C3A21;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    position: relative;
+}
+
+/* Subtitel stijl */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #B8966E, #7B4F33);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+/* Subkoppen */
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #5C3A21;
+    margin-bottom: 0.8rem;
+}
+
+/* Paragrafen */
+p {
+    font-size: 1.1rem;
+    color: #4e4336;
+    margin-bottom: 1.6rem;
+    text-align: justify;
+}
+
+/* Signature / highlight tekst */
+.signature {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #7B4F33;
+    border-left: 4px solid #B8966E;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    max-width: 750px;
+}
+
+/* Buttons stijl */
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(145deg, #7B4F33 0%, #B8966E 100%);
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    border-radius: 4px;
+    box-shadow: 0 6px 15px rgba(92,58,33,0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(92,58,33,0.35);
+}
+
+/* Hero tekst */
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Over ons content box */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.8;
+}
+
+.about-content p {
+    margin-bottom: 1.8rem;
+}
+
+/* Luxe hover effecten voor teksten */
+.service-card p,
+.portfolio-text p,
+.locatie-info p {
+    transition: all 0.3s ease;
+}
+
+.service-card p:hover,
+.portfolio-text p:hover,
+.locatie-info p:hover {
+    color: #7B4F33;
+}
+
+/* Kleine subtiele text shadow voor luxe effect */
+h2, h3, h4 {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* Vervang clip-path door een zachte radial fade */
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    
+    mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+
+    /* Optioneel: background kleur voor fade */
+    background: transparent; 
+    display: block;
+}
+
+
+/* =========================
+   SCROLL GALLERY BACKGROUND
+========================= */
+.scroll-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -10; /* lager dan alle content */
+    pointer-events: none; /* voorkomt dat je er ooit op klikt */
+}
+
+.scroll-gallery::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(240,235,225,0.6) 100%);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    filter: brightness(95%) saturate(110%);
+}
+
+.bg-slide.active {
+    opacity: 1;
+}
+
+
+
+/* Luxe, langzame adembeweging in kleurverloop */
+@keyframes softGradientMove {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.98) 0%,
+        rgba(255,255,255,0.9) 30%,
+        rgba(232,228,219,0.7) 70%,
+        rgba(232,228,219,0.0) 100%
+    );
+    transition: all 0.8s ease;
+    z-index: 999;
+}
+
+.header::before {
+    /* Luxe glanslijn die zacht beweegt */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255,255,255,0.05) 0%,
+        rgba(255,255,255,0.2) 30%,
+        rgba(255,255,255,0.05) 60%);
+    animation: shimmerHeader 10s linear infinite;
+    pointer-events: none;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(92,58,33,0.15), rgba(92,58,33,0.05), rgba(92,58,33,0.15));
+}
+
+
+/* Glanslijn beweegt subtiel over de header */
+@keyframes shimmerHeader {
+    0% {
+        transform: translateX(-30%);
+    }
+    100% {
+        transform: translateX(30%);
+    }
+}
+
+/* Container binnen header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    animation: fadeDownHeader 1.5s ease forwards;
+    opacity: 0;
+}
+
+/* Zachte fade van boven */
+@keyframes fadeDownHeader {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo h1:hover {
+    transform: scale(1.05);
+    color: #7B4F33;
+}
+
+/* ======= Luxe dropdown menu ======= */
+.nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(92,58,33,0.25);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 230px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    animation: dropdownFade 0.5s ease forwards;
+    transform-origin: top right;
+    list-style: none; /* ✅ Voeg dit toe */
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.nav.active ul {
+    display: flex;
+}
+
+.nav a {
+    color: #5C3A21;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(92,58,33,0.1);
+    transition: color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+.nav a:last-child {
+    border-bottom: none;
+}
+
+.nav a:hover {
+    color: #B8966E;
+    transform: translateX(5px);
+}
+
+/* ======= Luxe taalkeuze-knoppen ======= */
+.nav button {
+    background: linear-gradient(145deg, #7B4F33 0%, #5C3A21 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.nav button:hover {
+    background: linear-gradient(145deg, #B8966E 0%, #7B4F33 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.nav button:active {
+    transform: scale(0.97);
+}
+
+ /* ======= Luxe & zichtbare hamburgerknop ======= */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001; /* zorgt dat hij boven het menu blijft */
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #7B4F33, #B8966E);
+  border-radius: 3px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+/* Animatie bij openklappen */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+  background: linear-gradient(90deg, #B8966E, #7B4F33);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+  background: linear-gradient(90deg, #B8966E, #7B4F33);
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('hero.jpg') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25) 0%,   /* boven donkerder voor contrast tekst */
+        rgba(0,0,0,0.15) 50%,  /* halverwege iets lichter */
+        rgba(0,0,0,0.05) 80%,  /* bijna transparant */
+        rgba(255,255,255,0.0) 100% /* vloeiend naar niks */
+    );
+    transition: opacity 0.8s ease;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    padding: 6rem 0;
+    background: transparent; /* zodat body gradient zichtbaar blijft */
+}
+
+.bg-light {
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.0) 0%,
+        rgba(255,255,255,0.5) 30%,
+        rgba(255,255,255,0.7) 60%,
+        rgba(255,255,255,0.85) 100%
+    );
+    border-radius: 0; /* geen harde rand meer */
+    margin: 0;
+    padding: 4rem 0 6rem 0;
+}
+
+.hero, .section.bg-light {
+    position: relative;
+    z-index: 1;
+}
+.hero::after {
+    z-index: 0;
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.diensten-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.dienst-card {
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: all 0.6s ease;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.dienst-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.dienst-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  transition: all 0.8s ease;
+}
+
+.dienst-card:hover::after {
+  left: 100%;
+}
+
+.dienst-media {
+  height: 220px;
+  overflow: hidden;
+}
+
+.dienst-media img, .dienst-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.dienst-card:hover .dienst-media img,
+.dienst-card:hover .dienst-media video {
+  transform: scale(1.1);
+}
+
+.dienst-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.dienst-content h3 {
+  color: #5C3A21;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dienst-content p {
+  color: #4e4336;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-intro {
+  text-align: center;
+  color: #5C3A21;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.2rem;
+}
+
+
+/* =========================
+   SERVICES GRID
+========================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.6); /* lichte transparantie */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   PORTFOLIO SLIDER (vervangen)
+========================= */
+.portfolio-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    perspective: 2000px; /* belangrijk voor 3D effect */
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    backface-visibility: hidden;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+/* Bladzijde-effect */
+.page-turn {
+    animation: pageTurn 1.2s ease forwards;
+}
+
+@keyframes pageTurn {
+    0% {
+        transform: rotateY(0deg);
+        box-shadow: inset 0 0 0 rgba(0,0,0,0);
+    }
+    30% {
+        transform: rotateY(-40deg);
+        box-shadow: inset 50px 0 60px rgba(0,0,0,0.25);
+    }
+    60% {
+        transform: rotateY(-100deg);
+        box-shadow: inset 100px 0 100px rgba(0,0,0,0.35);
+    }
+    100% {
+        transform: rotateY(-180deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   PORTFOLIO - LUXE ZIGZAG DESIGN
+========================= */
+.portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-top: 4rem;
+}
+
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  background: linear-gradient(135deg, #ffffff, #f3f0eb);
+  border: 1px solid rgba(92, 58, 33, 0.1);
+  border-radius: 0; /* rechte hoeken */
+  padding: 3rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Luxe glans-overlay bij hover */
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  transition: all 0.8s ease;
+}
+
+.portfolio-item:hover::before {
+  left: 100%;
+}
+
+/* Hover-effect */
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #fff, #ece7e1);
+}
+
+/* Wissel richting om per rij */
+.portfolio-item:nth-child(even) {
+  flex-direction: row-reverse;
+  background: linear-gradient(135deg, #f7f5f2, #fff);
+}
+
+/* Afbeeldingen */
+.portfolio-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(92,58,33,0.1);
+    height: 300px; /* vaste hoogte zodat wissel geen layout shift veroorzaakt */
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%; /* vul de container volledig */
+    object-fit: cover; /* behoud aspect ratio zonder te rekken */
+    transition: transform 1s ease, opacity 1s ease;
+    backface-visibility: hidden;
+    display: block;
+}
+
+.portfolio-image.page-turn img {
+    animation: pageTurn 1.2s ease forwards;
+}
+
+@keyframes pageTurn {
+    0% { transform: rotateY(0deg); opacity: 1; }
+    30% { transform: rotateY(-40deg); opacity: 1; }
+    60% { transform: rotateY(-100deg); opacity: 1; }
+    100% { transform: rotateY(-180deg); opacity: 0; }
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.05) translateY(-3px);
+}
+
+/* Tekststijl */
+.portfolio-text {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.portfolio-text h3 {
+  font-size: 2rem;
+  color: #5C3A21;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.portfolio-text h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #5C3A21;
+}
+
+.portfolio-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 550px;
+}
+
+/* Subtiele verticale lijn tussen tekst en afbeelding */
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background: rgba(92,58,33,0.15);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.portfolio-item:nth-child(even)::after {
+  display: none;
+}
+
+/* Responsief gedrag */
+@media (max-width: 1000px) {
+  .portfolio-item {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .portfolio-item::after {
+    display: none;
+  }
+
+  .portfolio-text h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .portfolio-image img {
+    max-width: 100%;
+  }
+}
+
+
+/* Luxe knoppen */
+.portfolio-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(92,58,33,0.3);
+    color: var(--primary-color);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+.portfolio-slider button:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 1rem; }
+.next { right: 1rem; }
+
+/* Luxe achtergrond-overloop tijdens overgang */
+body.transitioning {
+    animation: bgFade 1.5s ease;
+}
+
+@keyframes bgFade {
+    0% { background: linear-gradient(to bottom, #D8D1C1, #E7E4DC); }
+    50% { background: linear-gradient(to bottom, #E7E4DC, #D8D1C1); }
+    100% { background: linear-gradient(to bottom, #D8D1C1, #E7E4DC); }
+}
+
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(92,58,33,0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(92,58,33,0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.contact-social a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #5C3A21;
+    font-weight: bold;
+    text-decoration: none;
+}
+.locatie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontaal centreren */
+  justify-content: center; /* Verticaal centreren als nodig */
+  text-align: center;
+}
+
+
+/* ===== Titel ===== */
+.locatie-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3b2c1f;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-items: center;
+}
+
+/* ===== Luxe kaartbox ===== */
+.locatie-kaartbox {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 50%;
+  margin: 0 auto; /* Extra veiligheid voor centrering */
+}
+
+.locatie-kaartbox:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(92,58,33,0.9);
+}
+
+/* ===== Info ===== */
+.locatie-info {
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f8f6 100%);
+  border-bottom: 1px solid #eee7e0;
+  text-align: center;
+}
+
+.locatie-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2f2216;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
+}
+  
+.locatie-info p {
+  margin: 0.4rem 0;
+  color: #4e4336;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.locatie-info a {
+  color: #82694d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.locatie-info a:hover {
+  color: #b8966e;
+}
+
+/* ===== Kaart ===== */
+.locatie-kaartbox iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
+  border-radius: 0 0 16px 16px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .locatie-container {
+    max-width: 95%;
+  }
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .locatie-kaartbox {
+    width: 100%;
+    max-width: 95%;
+  }
+}
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .locatie-kaartbox {
+    width: 100%;
+    max-width: 95%;
+  }
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .locatie-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: linear-gradient(to top, var(--footer-bg-color) 0%, rgba(92,58,33,0) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 0.5rem;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: #5C3A21;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(92, 58, 33, 0.4); /* bruine schaduw */
+    cursor: pointer;
+    z-index: 150;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 14px 28px rgba(92, 58, 33, 0.55);
+}
+.whatsapp-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ====== Desktop (breed genoeg) ====== */
+@media (min-width: 769px) {
+    .nav ul {
+        display: flex;            /* horizontaal menu */
+        flex-direction: row;
+        gap: 2rem;
+        position: static;         /* geen overlay */
+        background: transparent;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        width: auto;
+    }
+
+    .hamburger {
+        display: none;            /* hamburger verbergen op desktop */
+    }
+}
+
+/* ====== Mobiel (smal scherm) ====== */
+@media (max-width: 1350px) {
+    .nav ul {
+        display: none;            /* standaard gesloten */
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(255,255,255,0.9);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav.active ul {
+        display: flex;            /* openen bij hamburger */
+    }
+
+    .hamburger {
+        display: flex;             /* hamburger tonen op mobiel */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.6rem 1.5rem;
+    }
+}
