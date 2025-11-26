@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-key="title">Contact - Bouwbedrijf Destino B.V.</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-content">
+        <img src="images/destinologo.png" alt="Bouwbedrijf Destino Logo">
+        <h2>bericht ons en we staan klaar!</h2>
+    </div>
+</div>
+
+<!-- Achtergrond-swipe container -->
+<div class="scroll-gallery">
+    <img src="images/thumbnail_IMG_4018.jpg" alt="background 1" class="bg-slide active">
+    <img src="images/thumbnail_IMG_6559.jpg" alt="background 2" class="bg-slide">
+    <img src="images/thumbnail_IMG_6561.jpg" alt="background 3" class="bg-slide">
+    <img src="images/thumbnail_IMG_6567.jpg" alt="background 4" class="bg-slide">
+    <img src="images/thumbnail_IMG_6575.jpg" alt="background 5" class="bg-slide">
+</div>
+
+ <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><h1><a href="index.html"><img src="images/destinologo.png" width="135" height="90" alt="logo"></a></h1></div>
+            <nav class="nav" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" data-key="nav-home">Home</a></li>
+                    <li><a href="overons.html" data-key="nav-about">Over ons</a></li>
+                    <li><a href="diensten.html" data-key="nav-services">Diensten</a></li>
+                    <li><a href="portfolio.html" data-key="nav-portfolio">Portfolio</a></li>
+                    <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
+                    <li>
+                    <button onclick="setLanguage('nl')" data-key="lang-nl">NL</button>
+                    <button onclick="setLanguage('en')" data-key="lang-en">EN</button>
+                    <button onclick="setLanguage('ar')" data-key="lang-ar">AR</button>
+                    <button onclick="setLanguage('prt')" data-key="lang-ar">PRT</button>
+                    <button onclick="setLanguage('cn')" data-key="lang-ar">CN</button>
+                </li>
+                </ul>
+                
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+   <section class="hero">
+    <div class="hero-content">
+        <h2>Bouwbedrijf Destino B.V.</h2>
+        <h3 data-key="hero-title">Exclusieve Bouw van Uw Droomhuis</h3>
+        <p data-key="hero-subtitle">Wij realiseren luxe woningen op maat, met oog voor kwaliteit en design.</p>
+        <a href="contact.html" class="btn" data-key="contact-button">Neem Contact Op</a>
+    </div>
+
+    <!-- SLIDER ARROWS -->
+    <button id="bg-prev" class="bg-arrow left-arrow">&#10094;</button>
+    <button id="bg-next" class="bg-arrow right-arrow">&#10095;</button>
+
+</section>
+
+<!-- HERO -->
+<section class="hero" style="background:url('hero-contact.jpg') center/cover no-repeat;">
+  <div class="hero-content">
+    <h2 data-key="contact-hero-title">Neem contact met ons op</h2>
+    <p data-key="contact-hero-subtitle">Wij staan klaar om uw bouwdromen te realiseren.</p>
+  </div>
+</section>
+ 
+<div class="contact-intro">
+    <div class="contact-intro-text">
+        <h3>Wij staan klaar om u verder te helpen</h3>
+        <p>
+            Heeft u vragen over een project, wilt u een offerte aanvragen of zoekt u professioneel advies?
+            Ons team helpt u graag verder met vakmanschap en duidelijke communicatie.
+        </p>
+    </div>
+
+    <div class="contact-intro-img">
+        <img src="https://www.academica.nl/media/Benteveldsweg-Aerdenhout.png" alt="Contact Bouwbedrijf Destino">
+    </div>
+</div>
+
+
+ <!-- Contactformulier sectie -->
+<section class="section">
+  <!-- modify this form HTML and place wherever you want your form -->
+<h2>stel gerust je vraag</h2>
+<form class="contact-form" action="https://formspree.io/f/mpwkzjky" method="POST">
+  <label> Your email:
+    <input type="email" name="email">
+  </label>
+  <label>Your message:<textarea name="message"></textarea> </label>
+  <!-- your other form fields go here -->
+  <button type="submit" class="btn">Send</button>
+</form>
+</section>
+ 
+<section class="section bg-light">
+
+  <!-- CONTACT INFO -->
+<section class="section">
+  <div class="locatie-container">
+    <h2>Bezoek ons kantoor</h2>
+    <div class="locatie-kaartbox">
+      <div class="locatie-info">
+        <h3>Bouwbedrijf Destino B.V.</h3>
+        <p>Julianaplantsoen 197<br>1111XL Diemen</p>
+        <p>
+          <strong>T:</strong> <a href="tel:0401234567">040 - 123 45 67</a><br>
+          <strong>E:</strong> <a href="mailto:info@destinobouw.nl">info@destinobouw.nl</a>
+        </p>
+      </div>
+      <iframe
+        src="https://www.google.com/maps?q=Diemen&output=embed"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+</section>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>Bouwbedrijf Destino B.V.</h3>
+            <p>Uw partner voor nieuwbouw, renovatie, verbouwingen en maatwerkprojecten.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Snelle Links</h3>
+            <ul>
+                <li><a href="overons.html">Over ons</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-phone"></i> 06 - 30302695</p>
+            <p><i class="fa-solid fa-envelope"></i><a href="mailto:info@destinobouw.nl">info@destinobouw.nl</p>
+            <p><i class="fa-solid fa-location-dot"></i>Julianaplantsoen 197 1111XLDiemen, Nederland</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Volg ons</h3>
+            <a href="https://www.tiktok.com/@bouwbv.destino" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.</p>
+    </div>
+</footer>
+
+    
+    <div class="whatsapp-btn" id="whatsappBtn" title="Chat via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="whatsapp-icon">
+      <path d="M256 0C114.6 0 0 114.6 0 256c0 45.4 11.9 89.4 34.6 128.1L0 512l132.5-33.5C172.3 498.3 214.3 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0zM256 470c-38.6 0-76.4-10.4-109.3-30l-7.8-4.6-78.7 20 21-81.3-5-7.8C56 329.7 44 293.9 44 256 44 138.5 138.5 44 256 44s212 94.5 212 212-94.5 214-212 214zm119.2-146.9c-6.5-3.2-38.3-19.3-44.2-21.5s-10.3-3.2-14.7 3.2c-4.4 6.5-17.1 21.5-20.9 25.9s-7.7 4.8-14.1 1.6c-38.3-19.3-63.4-34.6-88.3-77.3-6.5-11.3 6.5-10.5 18.6-34.6 2.1-4.8 1-8.9-.5-12.1-1.6-3.2-14.7-35.6-20.2-48.9-5.3-12.6-10.7-10.8-14.7-11-3.7-.2-8.1-.2-12.5-.2-4.4 0-11.7 1.6-17.8 8.1s-23.4 22.9-23.4 55.8 24 64.6 27.4 69.1c3.2 4.5 47.3 72.3 115.1 101.6 42.7 18.4 59.4 20 80.7 16.8 12.9-2.1 38.3-15.6 43.7-30.7 5.5-15.1 5.5-28 3.9-30.7-1.6-2.9-5.9-4.7-12.5-7.9z"/>
+    </svg>
+  </div>
+  
+<script src="js/script.js"></script>
+
+<!-- SCRIPT -->
+<script>
+const translations = {
+  nl: {
+    'nav-home':'Home','nav-about':'Over ons','nav-services':'Diensten','nav-portfolio':'Portfolio','nav-contact':'Contact',
+    'contact-hero-title':'Neem contact met ons op','contact-hero-subtitle':'Wij staan klaar om uw bouwdromen te realiseren.',
+    'contact-title':'Contactformulier','contact-text':'Vul het onderstaande formulier in en wij nemen zo spoedig mogelijk contact met u op.',
+    'form-name-label':'Naam','form-email-label':'E-mailadres','form-message-label':'Bericht','form-submit':'Verstuur bericht',
+    'contact-info-title':'Onze Gegevens','contact-info-text':'<strong>Bouwbedrijf Destino B.V.</strong><br>Industrieweg 123, 5612 AB Eindhoven<br>T: 040 - 123 45 67<br>E: info@destinobouw.nl',
+    'footer-text':'© 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.'
+  },
+  en: {
+    'nav-home':'Home','nav-about':'About Us','nav-services':'Services','nav-portfolio':'Portfolio','nav-contact':'Contact',
+    'contact-hero-title':'Get in Touch','contact-hero-subtitle':'We are ready to bring your construction dreams to life.',
+    'contact-title':'Contact Form','contact-text':'Fill in the form below and we will contact you as soon as possible.',
+    'form-name-label':'Name','form-email-label':'Email Address','form-message-label':'Message','form-submit':'Send Message',
+    'contact-info-title':'Our Details','contact-info-text':'<strong>Destino Construction B.V.</strong><br>Industrieweg 123, 5612 AB Eindhoven<br>T: +31 40 123 45 67<br>E: info@destinobouw.nl',
+    'footer-text':'© 2025 Destino Construction B.V. All rights reserved.'
+  },
+  ar: {
+    'nav-home':'الصفحة الرئيسية','nav-about':'معلومات عنا','nav-services':'الخدمات','nav-portfolio':'المعرض','nav-contact':'اتصل بنا',
+    'contact-hero-title':'اتصل بنا','contact-hero-subtitle':'نحن جاهزون لتحقيق أحلامك في البناء.',
+    'contact-title':'نموذج الاتصال','contact-text':'املأ النموذج أدناه وسنتواصل معك في أقرب وقت ممكن.',
+    'form-name-label':'الاسم','form-email-label':'البريد الإلكتروني','form-message-label':'الرسالة','form-submit':'إرسال الرسالة',
+    'contact-info-title':'بياناتنا','contact-info-text':'<strong>شركة ديستينو للبناء</strong><br>شارع إندستريويغ 123، 5612 آي بي أيندهوفن<br>الهاتف: 040 - 123 45 67<br>البريد: info@destinobouw.nl',
+    'footer-text':'© 2025 شركة ديستينو للبناء. جميع الحقوق محفوظة.'
+  }
+};
+
+// === VERTAALFUNCTIE ===
+function setLanguage(lang) {
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (translations[lang][key]) {
+      // Gebruik innerHTML zodat <br> behouden blijft
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Richting aanpassen voor Arabisch
+  document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+}
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

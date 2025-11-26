@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouwbedrijf Destino B.V. - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-content">
+        <img src="images/destinologo.png" alt="Bouwbedrijf Destino Logo">
+        <h2>Welkom</h2>
+    </div>
+</div>
+
+<!-- Achtergrond-swipe container -->
+<div class="scroll-gallery">
+    <img src="images/thumbnail_IMG_4018.jpg" alt="background 1" class="bg-slide active">
+    <img src="images/thumbnail_IMG_6559.jpg" alt="background 2" class="bg-slide">
+    <img src="images/thumbnail_IMG_6561.jpg" alt="background 3" class="bg-slide">
+    <img src="images/thumbnail_IMG_6567.jpg" alt="background 4" class="bg-slide">
+    <img src="images/thumbnail_IMG_6575.jpg" alt="background 5" class="bg-slide">
+</div>
+
+ <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><h1><a href="index.html"><img src="images/destinologo.png" width="135" height="90" alt="logo"></a></h1></div>
+            <nav class="nav" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" data-key="nav-home">Home</a></li>
+                    <li><a href="overons.html" data-key="nav-about">Over ons</a></li>
+                    <li><a href="diensten.html" data-key="nav-services">Diensten</a></li>
+                    <li><a href="portfolio.html" data-key="nav-portfolio">Portfolio</a></li>
+                    <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
+                    <li>
+                    <button onclick="setLanguage('nl')" data-key="lang-nl">NL</button>
+                    <button onclick="setLanguage('en')" data-key="lang-en">EN</button>
+                    <button onclick="setLanguage('ar')" data-key="lang-ar">AR</button>
+                    <button onclick="setLanguage('prt')" data-key="lang-en">PRT</button>
+                    <button onclick="setLanguage('cn')" data-key="lang-ar">CN</button>
+                </li>
+                </ul>
+                
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+   <section class="hero">
+    <div class="hero-content">
+        <h2>Bouwbedrijf Destino B.V.</h2>
+        <h3 data-key="hero-title">Exclusieve Bouw van Uw Droomhuis</h3>
+        <p data-key="hero-subtitle">Wij realiseren luxe woningen op maat, met oog voor kwaliteit en design.</p>
+        <a href="contact.html" class="btn" data-key="contact-button">Neem Contact Op</a>
+    </div>
+
+    <!-- SLIDER ARROWS -->
+    <button id="bg-prev" class="bg-arrow left-arrow">&#10094;</button>
+    <button id="bg-next" class="bg-arrow right-arrow">&#10095;</button>
+
+</section>
+
+<section class="project-section">
+<!-- PROJECTEN SECTION -->
+    <h2 class="project-title">Onze Recente Projecten</h2>
+    <div class="project-grid">
+
+        <div class="project-item">
+            <img src="images/thumbnail_IMG_4018.jpg" alt="Project 1">
+            <h3>Nieuwbouw Luxe Villa</h3>
+            <p>Perfect afgewerkt met hoogwaardige materialen.</p>
+            <a href="portfolio.html" class="btn small-btn">Bekijk Project</a>
+        </div>
+
+        <div class="project-item">
+            <img src="images/thumbnail_IMG_6559.jpg" alt="Project 2">
+            <h3>Complete Renovatie</h3>
+            <p>Van oud naar modern: volledig vernieuwde woning.</p>
+            <a href="portfolio.html" class="btn small-btn">Bekijk Project</a>
+        </div>
+
+        <div class="project-item">
+            <img src="images/thumbnail_IMG_6567.jpg" alt="Project 3">
+            <h3>Uitbouw & Verbouwing</h3>
+            <p>Meer ruimte en meer licht, volledig op maat.</p>
+            <a href="portfolio.html" class="btn small-btn">Bekijk Project</a>
+        </div>
+
+    </div>
+</section>
+<!-- MARKETING SECTION -->
+    <div class="marketing-content">
+        <h2>Bouwbedrijf Destino B.V. – Kwaliteit, Vakmanschap & Transparantie</h2>
+        <p>
+            Met jarenlange ervaring in nieuwbouw, verbouwingen, renovaties en maatwerkprojecten 
+            staat Bouwbedrijf Destino B.V. bekend om betrouwbaarheid en vakmanschap.  
+            Wij begeleiden u van ontwerp tot oplevering en streven naar een perfect resultaat 
+            dat volledig aansluit op uw wensen.
+        </p>
+        <ul>
+            <li>✔ Complete nieuwbouw & luxe villa’s</li>
+            <li>✔ Renovaties & verbouwingen</li>
+            <li>✔ Maatwerk interieur & exterieur</li>
+            <li>✔ Transparante planning en communicatie</li>
+            <li>✔ Duurzame materialen & moderne technieken</li>
+        </ul>
+        <a href="contact.html" class="btn">Vraag vrijblijvend een offerte aan</a>
+    </div>
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>Bouwbedrijf Destino B.V.</h3>
+            <p>Uw partner voor nieuwbouw, renovatie, verbouwingen en maatwerkprojecten.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Snelle Links</h3>
+            <ul>
+                <li><a href="overons.html">Over ons</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-phone"></i> 06 - 30302695</p>
+            <p><i class="fa-solid fa-envelope"></i><a href="mailto:info@destinobouw.nl">info@destinobouw.nl</p>
+            <p><i class="fa-solid fa-location-dot"></i>Julianaplantsoen 197 1111XLDiemen, Nederland</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Volg ons</h3>
+            <a href="https://www.tiktok.com/@bouwbv.destino" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.</p>
+    </div>
+</footer>
+    
+    <div class="whatsapp-btn" id="whatsappBtn" title="Chat via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="whatsapp-icon">
+      <path d="M256 0C114.6 0 0 114.6 0 256c0 45.4 11.9 89.4 34.6 128.1L0 512l132.5-33.5C172.3 498.3 214.3 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0zM256 470c-38.6 0-76.4-10.4-109.3-30l-7.8-4.6-78.7 20 21-81.3-5-7.8C56 329.7 44 293.9 44 256 44 138.5 138.5 44 256 44s212 94.5 212 212-94.5 214-212 214zm119.2-146.9c-6.5-3.2-38.3-19.3-44.2-21.5s-10.3-3.2-14.7 3.2c-4.4 6.5-17.1 21.5-20.9 25.9s-7.7 4.8-14.1 1.6c-38.3-19.3-63.4-34.6-88.3-77.3-6.5-11.3 6.5-10.5 18.6-34.6 2.1-4.8 1-8.9-.5-12.1-1.6-3.2-14.7-35.6-20.2-48.9-5.3-12.6-10.7-10.8-14.7-11-3.7-.2-8.1-.2-12.5-.2-4.4 0-11.7 1.6-17.8 8.1s-23.4 22.9-23.4 55.8 24 64.6 27.4 69.1c3.2 4.5 47.3 72.3 115.1 101.6 42.7 18.4 59.4 20 80.7 16.8 12.9-2.1 38.3-15.6 43.7-30.7 5.5-15.1 5.5-28 3.9-30.7-1.6-2.9-5.9-4.7-12.5-7.9z"/>
+    </svg>
+  </div>
+
+<script src="js/script.js"></script>
+
+<script>
+// === Taalkeuze ===
+const translations = {
+    nl: {
+        'hero-title': 'Exclusieve Bouw van Uw Droomhuis',
+        'hero-subtitle': 'Wij realiseren luxe woningen op maat, met oog voor kwaliteit en design.',
+        'contact-button': 'Neem Contact Op',
+        'footer-text': '© 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.',
+        'lang-nl': 'NL',
+        'lang-en': 'EN',
+        'lang-ar': 'AR',
+        'nav-home': 'Home',
+        'nav-about': 'Over ons',
+        'nav-services': 'Diensten',
+        'nav-portfolio': 'Portfolio',
+        'nav-contact': 'Contact'
+    },
+    en: {
+        'hero-title': 'Exclusive Construction of Your Dream Home',
+        'hero-subtitle': 'We build luxury homes tailored to your needs with a focus on quality and design.',
+        'contact-button': 'Contact Us',
+        'footer-text': '© 2025 Destino Construction Ltd. All rights reserved.',
+        'lang-nl': 'NL',
+        'lang-en': 'EN',
+        'lang-ar': 'AR',
+        'nav-home': 'Home',
+        'nav-about': 'About Us',
+        'nav-services': 'Services',
+        'nav-portfolio': 'Portfolio',
+        'nav-contact': 'Contact'
+    },
+    ar: {
+        'hero-title': 'بناء حصري لمنزل أحلامك',
+        'hero-subtitle': 'نحن نبني المنازل الفاخرة حسب الطلب مع التركيز على الجودة والتصميم.',
+        'contact-button': 'اتصل بنا',
+        'footer-text': '© 2025 شركة ديستينو للبناء. جميع الحقوق محفوظة.',
+        'lang-nl': 'NL',
+        'lang-en': 'EN',
+        'lang-ar': 'AR',
+        'nav-home': 'الصفحة الرئيسية',
+        'nav-about': 'معلومات عنا',
+        'nav-services': 'الخدمات',
+        'nav-portfolio': 'المعرض',
+        'nav-contact': 'اتصل بنا'
+    }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll('[data-key]').forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+            element.innerText = translations[lang][key];
+        }
+    });
+
+    if (lang === 'ar') {
+    document.body.setAttribute('dir', 'rtl'); // beter dan class voor RTL
+} else {
+    document.body.removeAttribute('dir');
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
