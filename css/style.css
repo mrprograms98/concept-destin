@@ -1687,7 +1687,7 @@ textarea {
     }
 }
 @media (max-width: 768px) {
-    body, p, h1, h2, h3, h4, h5 {
+   p, h1, h2, h3, h4, h5 {
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -1729,6 +1729,7 @@ textarea {
         text-align: center !important;
     }
 }
+
 
 
 
