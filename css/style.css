@@ -1642,7 +1642,7 @@ textarea {
     .btn {
         padding: 12px 22px;
         font-size: 1rem;
-        width: auto !important;
+        width: 90%; !important;
     }
 }
 @media (min-width: 769px) {
@@ -1712,6 +1712,7 @@ textarea {
         text-align: center !important;
     }
 }
+
 
 
 
