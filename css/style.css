@@ -185,6 +185,9 @@ p {
     border-radius: 4px;
     box-shadow: 0 6px 15px rgba(92,58,33,0.3);
     transition: all 0.3s ease;
+    width: auto !important;
+    display: inline-block !important;
+    max-width: fit-content;
 }
 
 .btn:hover {
@@ -1420,6 +1423,13 @@ textarea {
 .marketing-list {
     background: transparent;
 }
+.marketing-content {
+    text-align: center;
+}
+
+.marketing-content .btn {
+    margin: 0 auto;
+}
 
 /* FOOTER */
 .footer {
@@ -1611,6 +1621,19 @@ textarea {
         width: 95%;
     }
 }
+@media (max-width: 768px) {
+    .btn {
+        padding: 12px 22px;
+        font-size: 1rem;
+        width: auto !important;
+    }
+}
+@media (min-width: 769px) {
+    .btn {
+        padding: 14px 30px;
+    }
+}
+
 /* ============================================
    RECENTE PROJECTEN – 100% RESPONSIVE FIX
 ============================================ */
@@ -1672,5 +1695,3 @@ textarea {
         text-align: center !important;
     }
 }
-
-
