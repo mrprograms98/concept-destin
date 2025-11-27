@@ -44,11 +44,11 @@ body {
     z-index:10;
 
 }
-body * {
+h1 h3 h2 p {
     position: relative;
 }
 
-body *:not(img):not(svg)::after {
+h1 h3 h2 p:not(img):not(svg)::after {
     content: "";
     position: absolute;
     top: 0;
@@ -1746,4 +1746,5 @@ textarea {
         text-align: center !important;
     }
 }
+
 
