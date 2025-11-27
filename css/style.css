@@ -1627,6 +1627,42 @@ textarea {
         width: 95%;
     }
 }
+/* ============================================
+   RECENTE PROJECTEN – 100% RESPONSIVE FIX
+============================================ */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Mobiel */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr !important; /* 1 kolom */
+        gap: 1.5rem;
+    }
+
+    .project-item {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .project-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+}
+
+/* Kleinere mobiel */
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* ============================
    RESPONSIVE FOOTER FIX
 ============================ */
@@ -1652,3 +1688,4 @@ textarea {
         text-align: center !important;
     }
 }
+
