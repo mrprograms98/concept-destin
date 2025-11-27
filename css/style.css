@@ -44,6 +44,34 @@ body {
     z-index:10;
 
 }
+body * {
+    position: relative;
+}
+
+body *:not(img):not(svg)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+    animation: shine 6s infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
 /* =========================
    TYPOGRAFIE & TEKST DESIGN
 ========================= */
@@ -193,6 +221,12 @@ p {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(92,58,33,0.35);
+}
+.btn, .small-btn {
+    width: auto !important;
+    display: inline-block !important;
+    max-width: max-content !important;
+    white-space: nowrap;
 }
 
 /* Hero tekst */
@@ -1669,6 +1703,23 @@ textarea {
         grid-template-columns: 1fr !important;
     }
 }
+@media (max-width: 768px) {
+    body, p, h1, h2, h3, h4, h5 {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    .marketing-content,
+    .project-section,
+    .project-grid,
+    .footer,
+    .hero-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 
 /* ============================
    RESPONSIVE FOOTER FIX
@@ -1695,3 +1746,4 @@ textarea {
         text-align: center !important;
     }
 }
+
