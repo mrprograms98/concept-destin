@@ -601,18 +601,8 @@ text-decoration:none;
     transition: opacity 0.8s ease;
     z-index: 0;
 }
-/* Header logo titel responsive */
-@media (max-width: 768px) {
-    .logo h1 {
-        font-size: 1.4rem; /* pas dit aan naar wens */
-    }
-}
 
-@media (max-width: 480px) {
-    .logo h1 {
-        font-size: 1.2rem; /* nog kleiner voor mobiel */
-    }
-}
+
 
 
 .hero-content {
@@ -859,29 +849,9 @@ text-decoration:none;
 
 /* ===== RESPONSIVE ===== */
 
-/* Tablet */
-@media (max-width: 900px) {
-  .bg-arrow {
-    font-size: 26px;
-    width: 48px;
-    height: 48px;
-    padding: 10px;
-  }
-  .left-arrow { left: 14px; }
-  .right-arrow { right: 14px; }
-}
 
 /* Mobiel */
-@media (max-width: 600px) {
-  .bg-arrow {
-    font-size: 22px;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
-  }
-  .left-arrow { left: 10px; }
-  .right-arrow { right: 10px; }
-}
+
 
 /* Auto-hide class (blijft werken) */
 .bg-arrow.hidden {
@@ -1060,27 +1030,7 @@ text-decoration:none;
   display: none;
 }
 
-/* Responsief gedrag */
-@media (max-width: 1000px) {
-  .portfolio-item {
-    flex-direction: column !important;
-    text-align: center;
-    padding: 2rem;
-  }
 
-  .portfolio-item::after {
-    display: none;
-  }
-
-  .portfolio-text h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .portfolio-image img {
-    max-width: 100%;
-  }
-}
 
 
 /* Luxe knoppen */
@@ -1266,21 +1216,6 @@ textarea {
 }
 
 /* Extra mobiele optimalisatie */
-@media (max-width: 600px) {
-
-    .contact-info {
-        flex-direction: column; /* onder elkaar maar WEL netjes */
-        text-align: center;
-    }
-
-    .contact-info div {
-        width: 100%;
-    }
-
-    .contact-form {
-        width: 90vw;     /* formulier past perfect binnen mobiel scherm */
-    }
-}
 
 .locatie-container {
   display: flex;
@@ -1363,36 +1298,7 @@ textarea {
   border-radius: 0 0 16px 16px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 480px) {
-  .locatie-container{
-    max-width: 95%;
-  }
-}
 
-
-/* ===== Responsive ===== */
-@media (max-width: 480px) {
-  .locatie-kaartbox{
-    width: 100%;
-    max-width: 95%;
-  }
-}
-/* ===== Responsive ===== */
-@media (max-width: 480px) {
-  .locatie-kaartbox{
-    width: 100%;
-    max-width: 95%;
-  }
-}
-
-
-/* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .locatie-container{
-    grid-template-columns: 1fr;
-  }
-}
 
 /* 3 PROJECT FOTO'S */
 .project-section {
@@ -1557,17 +1463,126 @@ textarea {
     height: 32px;
     fill: white;
 }
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 1024px) {
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Kleinere mobiel */
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem; /* nog kleiner voor mobiel */
+    }
+
+  .locatie-container{
+    max-width: 95%;
+  }
+
+  .locatie-kaartbox{
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .locatie-kaartbox{
+    width: 100%;
+    max-width: 95%;
+  }
+
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.6rem 1.5rem;
     }
 }
 
-/* ====== Desktop (breed genoeg) ====== */
+
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer .footer-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.5rem;
+    }
+
+    footer .footer-column {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    footer .footer-column a,
+    footer .footer-column p {
+        text-align: center !important;
+    }
+    .project-grid {
+        grid-template-columns: 1fr !important; /* 1 kolom */
+        gap: 1.5rem;
+    }
+
+    .project-item {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .project-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    .logo h1 {
+        font-size: 1.4rem; /* pas dit aan naar wens */
+    }
+
+    .portfolio-slider,
+    .slides,
+    .slide {
+        width: 100%;
+    }
+
+    .slides {
+        flex-direction: column; /* alles onder elkaar */
+    }
+
+    .slide {
+        min-width: 100% !important;
+        margin-bottom: 2rem;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+    .diensten-grid {
+        grid-template-columns: 1fr !important; /* 1 kolom */
+        gap: 2rem;
+    }
+    .dienst-card {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .btn {
+        padding: 12px 22px;
+        font-size: 1rem;
+        width: 90%; !important;
+    }
+}
+
 @media (min-width: 769px) {
+    .btn {
+        padding: 14px 30px;
+    }
     .nav ul {
         display: flex;            /* horizontaal menu */
         flex-direction: row;
@@ -1584,18 +1599,73 @@ textarea {
         display: none;            /* hamburger verbergen op desktop */
     }
 }
-@media (max-width: 1200px) {
-    .nav a {
-        font-size: 0.9rem; /* kleiner */
+@media (max-width: 600px) {
+
+    .contact-info {
+        flex-direction: column; /* onder elkaar maar WEL netjes */
+        text-align: center;
     }
 
-    .nav ul {
-        gap: 1rem; /* minder ruimte tussen knoppen */
+    .contact-info div {
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 90vw;     /* formulier past perfect binnen mobiel scherm */
+    }
+  .bg-arrow {
+    font-size: 22px;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+  }
+  .left-arrow { left: 10px; }
+  .right-arrow { right: 10px; }
+}
+@media (min-width: 900px) {
+    p {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
+/* Tablet */
+@media (max-width: 900px) {
+  .bg-arrow {
+    font-size: 26px;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+  }
+  .left-arrow { left: 14px; }
+  .right-arrow { right: 14px; }
+  .locatie-container{
+    grid-template-columns: 1fr;
+  }
+}
 
-/* ====== Mobiel (smal scherm) ====== */
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
+  .portfolio-item {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .portfolio-item::after {
+    display: none;
+  }
+
+  .portfolio-text h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .portfolio-image img {
+    max-width: 100%;
+  }
+}@media (max-width: 1024px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
     .nav ul {
         display: none;            /* standaard gesloten */
         flex-direction: column;
@@ -1618,130 +1688,13 @@ textarea {
     }
 }
 
-
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 2rem;
+@media (max-width: 1200px) {
+    .nav a {
+        font-size: 0.9rem; /* kleiner */
     }
-    .btn {
-        padding: 0.6rem 1.5rem;
+
+    .nav ul {
+        gap: 1rem; /* minder ruimte tussen knoppen */
     }
 }
 
-@media (min-width: 900px) {
-    p {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-/* ================================
-   RESPONSIVE PORTFOLIO / PROJECTEN
-================================ */
-@media (max-width: 768px) {
-
-    .portfolio-slider,
-    .slides,
-    .slide {
-        width: 100%;
-    }
-
-    .slides {
-        flex-direction: column; /* alles onder elkaar */
-    }
-
-    .slide {
-        min-width: 100% !important;
-        margin-bottom: 2rem;
-    }
-
-    .slide img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-    }
-}
-@media (max-width: 768px) {
-    .diensten-grid {
-        grid-template-columns: 1fr !important; /* 1 kolom */
-        gap: 2rem;
-    }
-
-    .dienst-card {
-        margin: 0 auto;
-        width: 95%;
-    }
-}
-@media (max-width: 768px) {
-    .btn {
-        padding: 12px 22px;
-        font-size: 1rem;
-        width: 90%; !important;
-    }
-}
-@media (min-width: 769px) {
-    .btn {
-        padding: 14px 30px;
-    }
-}
-
-/* ============================================
-   RECENTE PROJECTEN – 100% RESPONSIVE FIX
-============================================ */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-/* Mobiel */
-@media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr !important; /* 1 kolom */
-        gap: 1.5rem;
-    }
-
-    .project-item {
-        width: 100% !important;
-        max-width: 100%;
-    }
-
-    .project-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-}
-
-/* Kleinere mobiel */
-@media (max-width: 480px) {
-    .project-grid {
-        grid-template-columns: 1fr !important;
-    }
-}
-
-/* ============================
-   RESPONSIVE FOOTER FIX
-============================ */
-@media (max-width: 768px) {
-    footer {
-        text-align: center;
-    }
-
-    footer .footer-container {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 1.5rem;
-    }
-
-    footer .footer-column {
-        width: 100% !important;
-        text-align: center !important;
-    }
-
-    footer .footer-column a,
-    footer .footer-column p {
-        text-align: center !important;
-    }
-}
