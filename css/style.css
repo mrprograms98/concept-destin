@@ -1575,7 +1575,7 @@ textarea {
     .btn {
         padding: 12px 22px;
         font-size: 1rem;
-        width: 90%; !important;
+        width: 90% !important;
     }
 }
 
@@ -1697,4 +1697,5 @@ textarea {
         gap: 1rem; /* minder ruimte tussen knoppen */
     }
 }
+
 
