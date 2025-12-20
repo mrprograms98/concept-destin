@@ -500,6 +500,7 @@ body.menu-open {
   border: none;
   cursor: pointer;
   z-index: 9999;
+  color: #5C3A21;
 }
 
 .hamburger span {
@@ -507,6 +508,7 @@ body.menu-open {
   background: #5C3A21;
   border-radius: 2px;
   transition: 0.3s ease;
+  color: #5C3A21;
 }
 
 body.menu-open .hamburger span:nth-child(1) {
@@ -1605,3 +1607,4 @@ textarea {
         font-size: 2.5rem;
     }
 }
+
