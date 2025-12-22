@@ -1530,9 +1530,11 @@ textarea {
         width: 95%;
     }
     .btn {
-        padding: 12px 22px;
-        font-size: 1rem;
-        width: 90% !important;
+      width: fit-content !important;
+      max-width: 95vw;
+      white-space: nowrap;
+      padding: 14px 20px;
+      font-size: 0.95rem;
     }
 }
 
@@ -1609,5 +1611,6 @@ textarea {
         font-size: 2.5rem;
     }
 }
+
 
 
