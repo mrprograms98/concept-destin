@@ -872,8 +872,40 @@ text-decoration:none;
   transition: 0.3s;
 }
 
-#bg-prev { left: 20px; }
-#bg-next { right: 20px; }
+/* Style voor de pijltjes die bij je site passen */
+#bg-prev, #bg-next {
+  background: rgba(92, 58, 33, 0.7); /* donkerbruin met transparantie */
+  border-radius: 50%; /* ronde vorm */
+  font-size: 2.5rem; /* grotere pijltjes voor zichtbaarheid */
+  width: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  z-index: 50;
+}
+
+#bg-prev:hover, #bg-next:hover {
+  background: rgba(92, 58, 33, 0.9); /* iets donkerder bij hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Positionering, kun je aanpassen indien nodig */
+#bg-prev {
+  left: 20px;
+}
+#bg-next {
+  right: 20px;
+}
+
+/* Pijltjes zelf (via font awesome) */
+.left-arrow, .right-arrow {
+  font-family: 'Font Awesome 5 Free'; /* controleer of je font awesome correct gebruikt */
+  font-weight: 900;
+}
 
 .bg-btn:hover {
   background: rgba(0,0,0,0.7);
@@ -1611,6 +1643,7 @@ textarea {
         font-size: 2.5rem;
     }
 }
+
 
 
 
