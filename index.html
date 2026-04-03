@@ -147,9 +147,15 @@ body.hovering #cursor-ring { width: 52px; height: 52px; border-color: rgba(192,5
 }
 #navbar.scrolled {
   padding: 16px 60px;
-  background: rgba(8,21,38,0.88);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.85) 100%
+  );
+
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .nav-logo svg { width: 36px; height: 36px; }
@@ -159,6 +165,7 @@ body.hovering #cursor-ring { width: 52px; height: 52px; border-color: rgba(192,5
 
 .nav-center { display: flex; gap: 40px; align-items: center; }
 .nav-link {
+    color: rgba(0,0,0,0.65);
   font-family: var(--font-caps); font-size: 12px; letter-spacing: 2.5px;
   text-transform: uppercase; color: rgba(255,255,255,0.7);
   text-decoration: none; position: relative;
@@ -170,18 +177,18 @@ body.hovering #cursor-ring { width: 52px; height: 52px; border-color: rgba(192,5
   width: 0; height: 1px; background: var(--red);
   transition: width 0.3s;
 }
-.nav-link:hover { color: var(--white); }
+.nav-link:hover { color: var(--navy); }
 .nav-link:hover::after { width: 100%; }
 
 .nav-right { display: flex; align-items: center; gap: 20px; }
 .lang-switcher { display: flex; gap: 8px; }
 .lang-btn {
   font-family: var(--font-caps); font-size: 10px; letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.45); background: none; border: none;
+  color: rgba(0,0,0,0.5); background: none; border: none;
   padding: 4px 2px; cursor: none; transition: color 0.3s;
   text-transform: uppercase;
 }
-.lang-btn:hover, .lang-btn.active { color: var(--white); }
+.lang-btn:hover, .lang-btn.active { color: var(--navy); }
 .lang-sep { color: rgba(255,255,255,0.2); font-size: 10px; align-self: center; }
 
 .nav-cta {
