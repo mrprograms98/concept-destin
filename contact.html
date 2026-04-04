@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
@@ -12,246 +12,504 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://bouwbedrijfdestino.nl/contact.html">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Contact – Bouwbedrijf Destino B.V.">
   <meta property="og:description" content="Neem contact op met Bouwbedrijf Destino B.V. voor uw nieuwbouw, verbouwing of renovatieproject in Diemen.">
   <meta property="og:image" content="https://bouwbedrijfdestino.nl/images/destinologo.png">
   <meta property="og:url" content="https://bouwbedrijfdestino.nl/contact.html">
   <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact – Bouwbedrijf Destino B.V.">
   <meta name="twitter:description" content="Neem contact op met Bouwbedrijf Destino B.V. voor uw nieuwbouw, verbouwing of renovatieproject in Diemen.">
   <meta name="twitter:image" content="https://bouwbedrijfdestino.nl/images/destinologo.png">
+</head>-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouwbedrijf Destino B.V. - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Bouwbedrijf Destino B.V. realiseert luxe woningen op maat in Diemen. Nieuwbouw, renovatie en maatwerkprojecten met oog voor kwaliteit en design.">
+  <meta name="keywords" content="Bouwbedrijf, nieuwbouw, renovatie, verbouwing, luxe woningen, Diemen, maatwerkprojecten">
+  <meta name="author" content="Bouwbedrijf Destino B.V.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bouwbedrijfdestino.nl/">
+
+  <meta property="og:title" content="Bouwbedrijf Destino B.V. – Home">
+  <meta property="og:description" content="Bouwbedrijf Destino B.V. realiseert luxe woningen op maat in Diemen. Nieuwbouw, renovatie en maatwerkprojecten met oog voor kwaliteit en design.">
+  <meta property="og:image" content="https://bouwbedrijfdestino.nl/images/destinologo.png">
+  <meta property="og:url" content="https://bouwbedrijfdestino.nl/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bouwbedrijf Destino B.V. – Home">
+  <meta name="twitter:description" content="Bouwbedrijf Destino B.V. realiseert luxe woningen op maat in Diemen. Nieuwbouw, renovatie en maatwerkprojecten met oog voor kwaliteit en design.">
+  <meta name="twitter:image" content="https://bouwbedrijfdestino.nl/images/destinologo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Bouwbedrijf Destino B.V.",
+    "image": "https://bouwbedrijfdestino.nl/images/destinologo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Julianaplantsoen 197",
+      "addressLocality": "Diemen",
+      "postalCode": "1111XL",
+      "addressCountry": "NL"
+    },
+    "telephone": "+31 6 30302695",
+    "email": "info@destinobouw.nl",
+    "url": "https://bouwbedrijfdestino.nl/",
+    "sameAs": ["https://www.tiktok.com/@bouwbv.destino"]
+  }
+  </script>
+<title>Bouwbedrijf Destino B.V. — Exclusieve Bouw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </head>
 <body>
-<div class="preloader">
-    <div class="preloader-content">
-        <img src="images/destinologo.png" alt="Bouwbedrijf Destino Logo">
-        <h2>bericht ons en we staan klaar!</h2>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo">
+    <svg viewBox="0 0 52 60" fill="none">
+      <rect x="0" y="20" width="14" height="40" fill="#C0392B"/>
+      <rect x="19" y="10" width="14" height="50" fill="#C0392B"/>
+      <rect x="38" y="0" width="14" height="60" fill="#C0392B"/>
+    </svg>
+    <div class="preloader-logo-text">
+      <div class="brand">Bouwbedrijf</div>
+      <div class="name">Destino</div>
     </div>
+  </div>
+  <div class="preloader-bar-wrap">
+    <div class="preloader-bar" id="pbar"></div>
+  </div>
+  <div class="preloader-pct" id="ppct">0%</div>
 </div>
 
-<section class="hero-wrapper">
-
-<div class="scroll-gallery">
-    <img src="images/H9609.jpg" alt="background 1" class="bg-slide active">
-    <img src="images/H9610.jpg" alt="background 2" class="bg-slide">
-</div>
-
-<header class="header">
-  <div class="logo"><h1><a href="index.html"><img src="images/destinologo.png" width="135" height="90" alt="logo"></a></h1></div>
-
-  <nav class="nav-menu" id="menu">
-    <ul>
-    <li class="menu-logo">
-      <img src="images/destinologo.png" alt="Bouwbedrijf Destino Logo">
-    </li>
-      <li><a href="index.html" data-key="nav-home">Home</a></li>
-      <li><a href="overons.html" data-key="nav-about">Over ons</a></li>
-      <li><a href="diensten.html" data-key="nav-services">Diensten</a></li>
-      <li><a href="portfolio.html" data-key="nav-portfolio">Portfolio</a></li>
-      <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
-<div class="lang-switch">
-    <button class="lang-btn" onclick="setLanguage('nl')">NL</button>
-    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
-    <button class="lang-btn" onclick="setLanguage('prt')">PRT</button>
-    <button class="lang-btn" onclick="setLanguage('cn')">CN</button>
-</div>
-    </ul>
-  </nav>
-
-  <!-- Hamburger -->
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <!--<svg viewBox="0 0 52 60" fill="none">
+      <rect x="0" y="20" width="14" height="40" fill="#C0392B"/>
+      <rect x="19" y="10" width="14" height="50" fill="#C0392B"/>
+      <rect x="38" y="0" width="14" height="60" fill="#C0392B"/>
+    </svg>-->
+    <div class="nav-logo-text">
+<img src="images/logotransparant.png" class="nav-logo-img">
+    </div>
+  </a>
+  <div class="nav-center">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">Over ons</a>
+    <a href="#services" class="nav-link">Diensten</a>
+    <a href="#gallery" class="nav-link">Portfolio</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="nl">NL</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="ar">AR</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="pt">PR</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="zh">CN</button>
+    </div>
+    <a href="#contact" class="nav-cta"><span>Contact</span></a>
+  </div>
   <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
-</header>
+</nav>
 
-    <!-- HERO -->
-   <section class="hero">
-    <div class="hero-content">
-        <h2>Bouwbedrijf Destino B.V.</h2>
-        <h3 data-key="hero-title">Exclusieve Bouw van Uw Droomhuis</h3>
-        <p data-key="hero-subtitle">Wij realiseren luxe woningen op maat, met oog voor kwaliteit en design.</p>
-        <a href="contact.html" class="btn" data-key="contact-button">Neem Contact Op</a>
-    </div>
-
-    <!-- SLIDER ARROWS -->
-    <button id="bg-prev" class="bg-arrow left-arrow">&#10094;</button>
-    <button id="bg-next" class="bg-arrow right-arrow">&#10095;</button>
-  </section>
-</section>
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="#hero" class="mobile-nav-item">Home</a>
+  <a href="#about" class="mobile-nav-item">Over ons</a>
+  <a href="#services" class="mobile-nav-item">Diensten</a>
+  <a href="#gallery" class="mobile-nav-item">Portfolio</a>
+  <a href="#contact" class="mobile-nav-item">Contact</a>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn">NL</button>
+    <button class="mobile-lang-btn">EN</button>
+    <button class="mobile-lang-btn">AR</button>
+    <button class="mobile-lang-btn">PR</button>
+    <button class="mobile-lang-btn">CN</button>
+  </div>
+</div>
 
 <!-- HERO -->
-<section class="hero" style="background:url('hero-contact.jpg') center/cover no-repeat;">
+<section id="hero">
+  <div class="hero-bg"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-img-wrap">
+    <div class="img-placeholder" style="background: linear-gradient(135deg,#0d1f3c 0%,#1a3a5c 100%); position:relative;">
+      <svg viewBox="0 0 300 300" style="width:60%;height:60%;opacity:0.06;" fill="white">
+        <rect x="20" y="100" width="60" height="200"/>
+        <rect x="120" y="60" width="60" height="240"/>
+        <rect x="220" y="30" width="60" height="270"/>
+      </svg>
+    </div>
+    <div class="hero-img-overlay"></div>
+  </div>
   <div class="hero-content">
-    <h2 data-key="contact-hero-title">Neem contact met ons op</h2>
-    <p data-key="contact-hero-subtitle">Wij staan klaar om uw bouwdromen te realiseren.</p>
+    <div class="hero-label">Exclusieve Bouw — Diemen</div>
+    <h1 class="hero-title">
+      <strong>Bouwbedrijf Destino</strong>
+      <em>Uw droomhuis, vakkundig gerealiseerd</em>
+    </h1>
+    <p class="hero-sub">Wij realiseren luxe woningen op maat, met oog voor kwaliteit, esthetiek en duurzaamheid. Vertrouwd, transparant en met passie voor het vak.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary"><span>Neem Contact Op</span></a>
+      <a href="#gallery" class="btn-ghost"><span>Bekijk Portfolio</span> <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num"><span class="count" data-target="15">0</span><sup>+</sup></div>
+      <div class="lbl">Jaar ervaring</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num"><span class="count" data-target="200">0</span><sup>+</sup></div>
+      <div class="lbl">Projecten</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num"><span class="count" data-target="98">0</span><sup>%</sup></div>
+      <div class="lbl">Tevreden klanten</div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
   </div>
 </section>
- 
-<div class="contact-intro">
-    <div class="contact-intro-text">
-        <h3>Wij staan klaar om u verder te helpen</h3>
-        <p>
-            Heeft u vragen over een project, wilt u een offerte aanvragen of zoekt u professioneel advies?
-            Ons team helpt u graag verder met vakmanschap en duidelijke communicatie.
-        </p>
+
+<!-- CONTACT SPLIT -->
+<div id="contact-split">
+
+  <!-- LEFT: FORM -->
+  <div class="form-pane">
+    <div class="fp-label rv-l">Stuur een bericht</div>
+    <h2 class="fp-title rv-l" style="transition-delay:.08s">Start uw <strong>project</strong></h2>
+    <p class="fp-sub rv-l" style="transition-delay:.15s">Vertel ons over uw plannen. Wij nemen snel contact op voor een vrijblijvend adviesgesprek.</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="field rv" style="transition-delay:.2s">
+          <input type="text" id="fname" placeholder=" " required>
+          <label for="fname">Voornaam</label>
+          <div class="field-line"></div>
+        </div>
+        <div class="field rv" style="transition-delay:.25s">
+          <input type="text" id="lname" placeholder=" " required>
+          <label for="lname">Achternaam</label>
+          <div class="field-line"></div>
+        </div>
+      </div>
+      <div class="field rv" style="transition-delay:.3s">
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">E-mailadres</label>
+        <div class="field-line"></div>
+      </div>
+      <div class="field rv" style="transition-delay:.35s">
+        <input type="tel" id="phone" placeholder=" ">
+        <label for="phone">Telefoonnummer</label>
+        <div class="field-line"></div>
+      </div>
+      <div class="field rv field-select-wrap" style="transition-delay:.4s">
+        <select id="project" required>
+          <option value="" disabled selected hidden></option>
+          <option>Nieuwbouw</option>
+          <option>Renovatie</option>
+          <option>Uitbouw / Verbouwing</option>
+          <option>Interieur Maatwerk</option>
+          <option>Duurzame Bouw</option>
+          <option>Anders</option>
+        </select>
+        <label for="project">Type project</label>
+        <div class="field-line"></div>
+      </div>
+      <div class="field rv" style="transition-delay:.45s">
+        <textarea id="msg" placeholder=" " required></textarea>
+        <label for="msg">Vertel over uw project</label>
+        <div class="field-line"></div>
+      </div>
+      <div class="rv" style="transition-delay:.5s">
+        <button type="submit" class="form-submit">
+          <span>Verstuur aanvraag</span>
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- Success -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="success-title">Bericht ontvangen!</div>
+      <p class="success-sub">Bedankt voor uw aanvraag. Wij nemen binnen 24 uur contact met u op voor een persoonlijk gesprek.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: INFO -->
+  <div class="info-pane">
+    <div class="info-pane-bg"></div>
+    <div class="info-pane-grid"></div>
+
+    <div class="ip-label rv-r">Contactgegevens</div>
+    <h2 class="ip-title rv-r" style="transition-delay:.08s">Wij staan voor u <strong>klaar</strong></h2>
+    <p class="ip-sub rv-r" style="transition-delay:.14s">Van maandag tot vrijdag bereikbaar voor al uw vragen. Of kom langs op ons kantoor in Diemen.</p>
+
+    <div class="contact-cards">
+      <div class="ccard rv-r" style="transition-delay:.2s">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 5.93 5.93l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="ccard-label">Telefoon</div>
+          <div class="ccard-val"><a href="tel:+31630302695">+31 6 3030 2695</a></div>
+          <div class="ccard-sub">Ma–Vr · 08:00–18:00</div>
+        </div>
+      </div>
+      <div class="ccard rv-r" style="transition-delay:.26s">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="ccard-label">E-mail</div>
+          <div class="ccard-val"><a href="mailto:c.ramos@bouwbedrijfdestino.nl">c.ramos@bouwbedrijfdestino.nl</a></div>
+          <div class="ccard-sub">Reactie binnen 24 uur</div>
+        </div>
+      </div>
+      <div class="ccard rv-r" style="transition-delay:.32s">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="ccard-label">Kantoor</div>
+          <div class="ccard-val">Julianaplantsoen 197</div>
+          <div class="ccard-sub">1111 XL Diemen, Nederland</div>
+        </div>
+      </div>
+      <div class="ccard rv-r" style="transition-delay:.38s">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="ccard-label">WhatsApp</div>
+          <div class="ccard-val"><a href="https://wa.me/31630302695">Stuur een bericht</a></div>
+          <div class="ccard-sub">Direct antwoord</div>
+        </div>
+      </div>
     </div>
 
-    <div class="contact-intro-img">
-        <img src="https://www.academica.nl/media/Benteveldsweg-Aerdenhout.png" alt="Contact Bouwbedrijf Destino">
+    <!-- Social -->
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.7a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+    <!-- Map placeholder -->
+    <div class="map-wrap rv-r" style="transition-delay:.48s;">
+      <div class="map-inner">
+        <div class="map-pin">
+          <div class="map-pin-dot"></div>
+          <div class="map-pin-stem"></div>
+          <div class="map-label-bubble">Destino — Diemen</div>
+        </div>
+        <a href="https://maps.google.com/?q=Julianaplantsoen+197+Diemen" target="_blank" class="map-open">Open in Maps →</a>
+      </div>
     </div>
+  </div>
 </div>
 
-<section class="section">
-  <!-- modify this form HTML and place wherever you want your form -->
-<h2>stel gerust je vraag</h2>
-<form class="contact-form" action="https://formspree.io/f/mpwkzjky" method="POST">
-  <label>uw email:
-    <input type="email" name="email">
-  </label>
-  <label>uw bericht:<textarea name="message"></textarea></label>
-  <!-- your other form fields go here -->
-  <button type="submit" class="btn">verzend</button>
-</form>
-</section>
- 
-<section class="section bg-light">
-
-  <!-- CONTACT INFO -->
-<section class="section">
-  <div class="locatie-container">
-    <h2>Bezoek ons kantoor</h2>
-    <div class="locatie-kaartbox">
-      <div class="locatie-info">
-        <h3>Bouwbedrijf Destino B.V.</h3>
-        <p>Julianaplantsoen 197<br>1111XL Diemen</p>
-        <p>
-          <!--<strong>T:</strong> <a href="tel:0401234567">040 - 123 45 67</a><br>-->
-          <strong>E:</strong> <a href="mailto:info@destinobouw.nl">info@destinobouw.nl</a>
-        </p>
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-bg"></div>
+  <div class="faq-inner">
+    <div class="faq-head">
+      <div class="sec-label rv">Veelgestelde vragen</div>
+      <h2 class="sec-title rv" style="transition-delay:.1s">Alles wat u wilt <strong>weten</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item rv" style="transition-delay:.1s">
+        <div class="faq-q">
+          <span class="faq-q-text">Hoe lang duurt het gemiddeld voordat jullie reageren op een aanvraag?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-body"><p>Wij streven ernaar binnen 24 uur op elke aanvraag te reageren. Voor dringende zaken kunt u ons ook direct bellen of een WhatsApp-bericht sturen — wij zijn bereikbaar van maandag tot vrijdag van 08:00 tot 18:00.</p></div>
       </div>
-      <iframe
-        src="https://www.google.com/maps?q=Diemen&output=embed"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
+      <div class="faq-item rv" style="transition-delay:.15s">
+        <div class="faq-q">
+          <span class="faq-q-text">Werken jullie ook buiten de regio Diemen?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-body"><p>Ja, wij werken voornamelijk in de regio Amsterdam en omstreken, maar nemen ook grotere projecten buiten deze regio aan. Neem contact op om de mogelijkheden voor uw specifieke locatie te bespreken.</p></div>
+      </div>
+      <div class="faq-item rv" style="transition-delay:.2s">
+        <div class="faq-q">
+          <span class="faq-q-text">Is een eerste adviesgesprek gratis?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-body"><p>Absoluut. Het eerste kennismakingsgesprek is geheel vrijblijvend en zonder kosten. Wij bespreken uw wensen, geven een eerste indruk van de mogelijkheden en plannen een vervolgstap naar uw wens.</p></div>
+      </div>
+      <div class="faq-item rv" style="transition-delay:.25s">
+        <div class="faq-q">
+          <span class="faq-q-text">Hoe wordt een offerte opgesteld en hoe lang duurt dit?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-body"><p>Na het adviesgesprek stellen wij een gedetailleerde offerte op. Afhankelijk van de complexiteit van het project duurt dit 3 tot 7 werkdagen. Alle prijzen zijn transparant en inclusief materialen en arbeid.</p></div>
+      </div>
+      <div class="faq-item rv" style="transition-delay:.3s">
+        <div class="faq-q">
+          <span class="faq-q-text">Zijn jullie gecertificeerd en beschikken jullie over de juiste vergunningen?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-body"><p>Ja, Bouwbedrijf Destino B.V. is ingeschreven bij de KvK (nr. 12345678) en beschikt over alle benodigde certificeringen en verzekeringen. Wij begeleiden u ook bij het aanvragen van benodigde vergunningen voor uw project.</p></div>
+      </div>
     </div>
   </div>
-
-</section>
 </section>
 
-<footer class="footer">
-    <div class="footer-container">
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="section-label reveal" style="color:rgba(255,255,255,0.4);">Klaar om te starten?</div>
+    <h2 class="cta-title reveal">Vraag vrijblijvend een <strong>offerte</strong> aan</h2>
+    <p class="cta-sub reveal">Vertel ons over uw project en wij nemen snel contact met u op voor een persoonlijk gesprek.</p>
+    <a href="mailto:c.ramos@bouwbedrijfdestino.nl" class="cta-btn reveal">
+      <span>Stuur ons een bericht</span>
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
 
-        <div class="footer-col">
-            <h3>Bouwbedrijf Destino B.V.</h3>
-            <p>Uw partner voor nieuwbouw, renovatie, verbouwingen en maatwerkprojecten.</p>
+<!-- FOOTER -->
+<footer id="footer" class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo" style="margin-bottom:20px;">
+        <svg viewBox="0 0 52 60" fill="none" style="width:32px;height:32px;">
+          <rect x="0" y="20" width="14" height="40" fill="#C0392B"/>
+          <rect x="19" y="10" width="14" height="50" fill="#C0392B"/>
+          <rect x="38" y="0" width="14" height="60" fill="#C0392B"/>
+        </svg>
+        <div class="nav-logo-text">
+        <p>Bouwbedrijf</p>
+        <p>Destino</p>
         </div>
-
-        <div class="footer-col">
-            <h3>Snelle Links</h3>
-            <ul>
-                <li><a href="overons.html">Over ons</a></li>
-                <li><a href="diensten.html">Diensten</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Contact</h3>
-            <p><i class="fa-solid fa-phone"></i> 06 - 30302695</p>
-            <p><i class="fa-solid fa-envelope"></i><a href="mailto:info@destinobouw.nl">info@destinobouw.nl</p>
-            <p><i class="fa-solid fa-location-dot"></i>Julianaplantsoen 197 1111XLDiemen, Nederland</p>
-        </div>
-
-        <div class="footer-col">
-            <h3>Volg ons</h3>
-            <a href="https://www.tiktok.com/@bouwbv.destino" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
-        </div>
-
+      </a>
+      <p class="footer-tagline">Exclusieve bouw en renovatie in de regio Diemen. Kwaliteit die spreekt voor zichzelf.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.7a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.</p>
+    <div>
+      <div class="footer-col-title">Navigatie</div>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">Over ons</a></li>
+        <li><a href="#services">Diensten</a></li>
+        <li><a href="#gallery">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+    <div>
+      <div class="footer-col-title">Diensten</div>
+      <ul class="footer-links">
+        <li><a href="#">Nieuwbouw</a></li>
+        <li><a href="#">Renovatie</a></li>
+        <li><a href="#">Uitbouw</a></li>
+        <li><a href="#">Interieur</a></li>
+        <li><a href="#">Duurzame bouw</a></li>
+      </ul>
+    </div>
+    <div id="contact">
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-item">
+        <i class="fa fa-map-marker-alt"></i>
+        <span>Julianaplantsoen 197<br>1111 XL Diemen</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa fa-phone"></i>
+        <a href="tel:+31630302695">+31 6 3030 2695</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:c.ramos@bouwbedrijfdestino.nl">c.ramos@bouwbedrijfdestino.nl</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa fa-globe"></i>
+        <a href="https://bouwbedrijfdestino.nl" target="_blank">bouwbedrijfdestino.nl</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+        <a href="https://wa.me/31630302695">WhatsApp ons</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Bouwbedrijf Destino B.V. — Alle rechten voorbehouden.</div>
+    <div class="footer-legal">
+      <a href="#">Privacybeleid</a>
+      <a href="#">Algemene voorwaarden</a>
+      <a href="#">KvK: 12345678</a>
+    </div>
+  </div>
 </footer>
 
-    
-    <div class="whatsapp-btn" id="whatsappBtn" title="Chat via WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="whatsapp-icon">
-      <path d="M256 0C114.6 0 0 114.6 0 256c0 45.4 11.9 89.4 34.6 128.1L0 512l132.5-33.5C172.3 498.3 214.3 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0zM256 470c-38.6 0-76.4-10.4-109.3-30l-7.8-4.6-78.7 20 21-81.3-5-7.8C56 329.7 44 293.9 44 256 44 138.5 138.5 44 256 44s212 94.5 212 212-94.5 214-212 214zm119.2-146.9c-6.5-3.2-38.3-19.3-44.2-21.5s-10.3-3.2-14.7 3.2c-4.4 6.5-17.1 21.5-20.9 25.9s-7.7 4.8-14.1 1.6c-38.3-19.3-63.4-34.6-88.3-77.3-6.5-11.3 6.5-10.5 18.6-34.6 2.1-4.8 1-8.9-.5-12.1-1.6-3.2-14.7-35.6-20.2-48.9-5.3-12.6-10.7-10.8-14.7-11-3.7-.2-8.1-.2-12.5-.2-4.4 0-11.7 1.6-17.8 8.1s-23.4 22.9-23.4 55.8 24 64.6 27.4 69.1c3.2 4.5 47.3 72.3 115.1 101.6 42.7 18.4 59.4 20 80.7 16.8 12.9-2.1 38.3-15.6 43.7-30.7 5.5-15.1 5.5-28 3.9-30.7-1.6-2.9-5.9-4.7-12.5-7.9z"/>
-    </svg>
-  </div>
-  
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <a href="https://wa.me/31630302695" class="wa-btn" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close"><i class="fa fa-times"></i></button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+
 <script src="js/script.js"></script>
 
-<!-- SCRIPT -->
-<script>
-const translations = {
-  nl: {
-    'nav-home':'Home','nav-about':'Over ons','nav-services':'Diensten','nav-portfolio':'Portfolio','nav-contact':'Contact',
-    'contact-hero-title':'Neem contact met ons op','contact-hero-subtitle':'Wij staan klaar om uw bouwdromen te realiseren.',
-    'contact-title':'Contactformulier','contact-text':'Vul het onderstaande formulier in en wij nemen zo spoedig mogelijk contact met u op.',
-    'form-name-label':'Naam','form-email-label':'E-mailadres','form-message-label':'Bericht','form-submit':'Verstuur bericht',
-    'contact-info-title':'Onze Gegevens','contact-info-text':'<strong>Bouwbedrijf Destino B.V.</strong><br>Industrieweg 123, 5612 AB Eindhoven<br>T: 040 - 123 45 67<br>E: info@destinobouw.nl',
-    'footer-text':'© 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.'
-  },
-  en: {
-    'nav-home':'Home','nav-about':'About Us','nav-services':'Services','nav-portfolio':'Portfolio','nav-contact':'Contact',
-    'contact-hero-title':'Get in Touch','contact-hero-subtitle':'We are ready to bring your construction dreams to life.',
-    'contact-title':'Contact Form','contact-text':'Fill in the form below and we will contact you as soon as possible.',
-    'form-name-label':'Name','form-email-label':'Email Address','form-message-label':'Message','form-submit':'Send Message',
-    'contact-info-title':'Our Details','contact-info-text':'<strong>Destino Construction B.V.</strong><br>Industrieweg 123, 5612 AB Eindhoven<br>T: +31 40 123 45 67<br>E: info@destinobouw.nl',
-    'footer-text':'© 2025 Destino Construction B.V. All rights reserved.'
-  },
-  ar: {
-    'nav-home':'الصفحة الرئيسية','nav-about':'معلومات عنا','nav-services':'الخدمات','nav-portfolio':'المعرض','nav-contact':'اتصل بنا',
-    'contact-hero-title':'اتصل بنا','contact-hero-subtitle':'نحن جاهزون لتحقيق أحلامك في البناء.',
-    'contact-title':'نموذج الاتصال','contact-text':'املأ النموذج أدناه وسنتواصل معك في أقرب وقت ممكن.',
-    'form-name-label':'الاسم','form-email-label':'البريد الإلكتروني','form-message-label':'الرسالة','form-submit':'إرسال الرسالة',
-    'contact-info-title':'بياناتنا','contact-info-text':'<strong>شركة ديستينو للبناء</strong><br>شارع إندستريويغ 123، 5612 آي بي أيندهوفن<br>الهاتف: 040 - 123 45 67<br>البريد: info@destinobouw.nl',
-    'footer-text':'© 2025 شركة ديستينو للبناء. جميع الحقوق محفوظة.'
-  }
-};
-
-// === VERTAALFUNCTIE ===
-function setLanguage(lang) {
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const key = el.getAttribute('data-key');
-    if (translations[lang][key]) {
-      // Gebruik innerHTML zodat <br> behouden blijft
-      el.innerHTML = translations[lang][key];
-    }
-  });
-  // Richting aanpassen voor Arabisch
-  document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-}
-</script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
