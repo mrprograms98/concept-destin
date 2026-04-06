@@ -11,6 +11,17 @@
   --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Barlow', sans-serif;
   --font-caps: 'Barlow Condensed', sans-serif;
+  --gold: #b8924a;
+--paper: #f5f0e8;
+--paper-cream: #f0ebe0;
+--paper-dark: #e8e2d6;
+--ink: #0a0d0f;
+--grey-light: #c5c0b0;
+--ease: cubic-bezier(0.77, 0, 0.18, 1);
+--font-d: 'Cormorant Garamond', serif;
+--font-c: 'Barlow Condensed', sans-serif;
+--font-b: 'Barlow', sans-serif;
+--off: #f7f4ee;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
