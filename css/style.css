@@ -1052,14 +1052,6 @@ body.hovering #cursor-ring { width: 52px; height: 52px; border-color: rgba(192,5
     grid-template-columns: 1fr;
   }
 }
-/* ── BOOK HERO ── */
-#hero {
-  min-height:100vh; position:relative;
-  display:flex; align-items:flex-end;
-  padding:0 64px 80px;
-  overflow:hidden;
-  background:var(--ink);
-}
 .hero-paper-bg {
   position:absolute; inset:0;
   background:linear-gradient(160deg, #0a0d0f 0%, #141a22 40%, #0f1318 100%);
