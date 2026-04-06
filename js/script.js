@@ -288,5 +288,20 @@ for(let i=0;i<55;i++) pts.push({x:Math.random()*3000,y:Math.random()*1000,vx:(Ma
   requestAnimationFrame(draw);
 })();
 });
+// Optioneel: voeg nummers toe aan menu items via JS
+// Plak dit in initAnimations() of direct na DOMContentLoaded:
+document.querySelectorAll('.mobile-nav-item').forEach((item, i) => {
+  const num = document.createElement('span');
+  num.style.cssText = `
+    font-family: var(--font-caps);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.18);
+    margin-right: 20px;
+    vertical-align: middle;
+  `;
+  num.textContent = String(i + 1).padStart(2, '0');
+  item.prepend(num);
+});
 
 
