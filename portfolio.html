@@ -204,197 +204,389 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-img-wrap reveal">
-    <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2a3a 0%,#2a3a4a 100%); position:relative; width:100%; height:100%;">
-      <svg viewBox="0 0 200 200" style="width:50%;opacity:0.08;" fill="#0d1f3c">
-        <rect x="10" y="50" width="40" height="150"/>
-        <rect x="80" y="20" width="40" height="180"/>
-        <rect x="150" y="0" width="40" height="200"/>
-      </svg>
-    </div>
-    <div class="about-img-border"></div>
-    <div class="about-img-tag">
-      <div class="t1">B.V.</div>
-      <div class="t2">Diemen, NL</div>
-    </div>
+<!-- PAGE TURN -->
+<div class="page-turn"></div>
+
+<!-- INTRO SPREAD -->
+<section id="intro">
+  <div class="intro-left reveal-fade">
+    <div class="book-label">Hoofdstuk I — Ons werk</div>
+    <h2 class="book-title">Elk project<br>een <em>verhaal</em> apart</h2>
+    <hr class="ruling">
+    <p class="book-text">
+      <span class="book-initial">B</span>ouwbedrijf Destino realiseert exclusieve woningen, renovaties en interieurprojecten die blijven. Van het eerste schetsontwerp tot de sleuteloverdracht — elk project is een samenwerking waarbij uw wens centraal staat.
+    </p>
+    <p class="book-text">Hieronder vindt u een selectie van onze meest recente en bijzondere realisaties. Elk project vertelt zijn eigen verhaal: van ambitieuze nieuwbouw tot verfijnde renovaties.</p>
   </div>
-  <div class="about-content">
-    <div class="section-label reveal">Over ons</div>
-    <h2 class="section-title reveal">Kwaliteit die <strong>spreekt voor zichzelf</strong></h2>
-    <div class="divider reveal"></div>
-    <p class="about-text reveal">Bouwbedrijf Destino B.V. is uw betrouwbare partner voor exclusieve nieuwbouw, renovaties en interieurprojecten in de regio Diemen en omstreken. Wij combineren ambacht met moderne bouwmethoden.</p>
-    <p class="about-text reveal">Onze aanpak is gebaseerd op transparantie, vakmanschap en persoonlijke aandacht. Van het eerste ontwerp tot de sleuteloverdracht begeleidt ons team u door elke stap.</p>
-    <div class="about-signature reveal">
-      <div class="about-sig-img"><span>CR</span></div>
-      <div class="about-sig-info">
-        <div class="name">Carlos Ramos</div>
-        <div class="role">Algemeen Directeur</div>
+  <div class="intro-gutter"></div>
+  <div class="intro-right reveal-fade" style="transition-delay:.15s">
+    <div class="book-label">Categorieën</div>
+    <h3 class="book-title" style="font-size:clamp(22px,2.5vw,34px); margin-bottom:24px">Filter op <strong>type project</strong></h3>
+    <div class="category-list">
+      <div class="cat-item" data-filter="all">
+        <div class="cat-name">Alle projecten</div>
+        <div class="cat-count">09 stuks</div>
+        <i class="cat-arrow fa fa-arrow-right"></i>
+      </div>
+      <div class="cat-item" data-filter="nieuwbouw">
+        <div class="cat-name">Nieuwbouw & Villa's</div>
+        <div class="cat-count">03 stuks</div>
+        <i class="cat-arrow fa fa-arrow-right"></i>
+      </div>
+      <div class="cat-item" data-filter="renovatie">
+        <div class="cat-name">Renovaties</div>
+        <div class="cat-count">02 stuks</div>
+        <i class="cat-arrow fa fa-arrow-right"></i>
+      </div>
+      <div class="cat-item" data-filter="uitbouw">
+        <div class="cat-name">Uitbouw & Verbouwing</div>
+        <div class="cat-count">02 stuks</div>
+        <i class="cat-arrow fa fa-arrow-right"></i>
+      </div>
+      <div class="cat-item" data-filter="interieur">
+        <div class="cat-name">Interieur Maatwerk</div>
+        <div class="cat-count">01 stuks</div>
+        <i class="cat-arrow fa fa-arrow-right"></i>
+      </div>
+      <div class="cat-item" data-filter="duurzaam">
+        <div class="cat-name">Duurzame Bouw</div>
+        <div class="cat-count">01 stuks</div>
+        <i class="cat-arrow fa fa-arrow-right"></i>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header">
-    <div class="section-label reveal">Wat wij bieden</div>
-    <h2 class="section-title reveal">Onze <strong>Diensten</strong></h2>
+<!-- FILTER BAR -->
+<div id="filters">
+  <div class="filter-label">Toon</div>
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-f="all">Alles</button>
+    <button class="filter-tab" data-f="nieuwbouw">Nieuwbouw</button>
+    <button class="filter-tab" data-f="renovatie">Renovatie</button>
+    <button class="filter-tab" data-f="uitbouw">Uitbouw</button>
+    <button class="filter-tab" data-f="interieur">Interieur</button>
+    <button class="filter-tab" data-f="duurzaam">Duurzaam</button>
   </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-num">01</div>
-      <div class="service-icon"><i class="fa fa-building"></i></div>
-      <div class="service-name">Nieuwbouw & Villa's</div>
-      <p class="service-desc">Van architect tot oplevering realiseren wij uw droomwoning. Luxe, op maat en volledig naar wens.</p>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-count" id="projCount">Alle projecten — <strong>9</strong> realisaties</div>
+  <div class="masonry" id="masonryGrid">
+
+    <div class="project-card" data-cat="nieuwbouw"
+         data-title="Luxe Villa Diemen" data-location="Diemen, 2023" data-area="380 m²" data-type="Nieuwbouw" data-year="2023"
+         data-desc="Een vrijstaande villa gebouwd met premium materialen. De opdrachtgever wenste een tijdloos ontwerp met ruime open leefruimtes, vloerverwarming en duurzame installaties doorheen het gehele pand.">
+      <div class="img-wrap">
+        <div class="card-placeholder p1">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="20" y="60" width="160" height="100"/><polygon points="20,60 100,10 180,60"/><rect x="80" y="100" width="40" height="60"/><rect x="30" y="75" width="30" height="25"/><rect x="140" y="75" width="30" height="25"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Nieuwbouw</div>
+          <div class="card-title">Luxe Villa Diemen</div>
+          <div class="card-meta">Diemen · 2023 · 380 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-num">02</div>
-      <div class="service-icon"><i class="fa fa-tools"></i></div>
-      <div class="service-name">Renovaties</div>
-      <p class="service-desc">Uw woning nieuw leven inblazen? Wij renoveren met respect voor de bestaande architectuur en uw wensen.</p>
+
+    <div class="project-card" data-cat="renovatie"
+         data-title="Klassiek Herenhuis" data-location="Amsterdam, 2022" data-area="260 m²" data-type="Renovatie" data-year="2022"
+         data-desc="Volledige renovatie van een monumentaal herenhuis uit 1910. Behoud van originele stucwerk en kapconstructie gecombineerd met moderne installaties en een hedendaagse keuken.">
+      <div class="img-wrap">
+        <div class="card-placeholder p2">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="10" y="40" width="80" height="120"/><rect x="110" y="55" width="80" height="105"/><rect x="40" y="0" width="120" height="45"/><rect x="30" y="65" width="25" height="25"/><rect x="145" y="70" width="25" height="25"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Renovatie</div>
+          <div class="card-title">Klassiek Herenhuis</div>
+          <div class="card-meta">Amsterdam · 2022 · 260 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-num">03</div>
-      <div class="service-icon"><i class="fa fa-expand-arrows-alt"></i></div>
-      <div class="service-name">Uitbouw & Verbouwing</div>
-      <p class="service-desc">Meer ruimte creëren? Wij realiseren uitbouwen en verbouwingen die naadloos aansluiten bij uw woning.</p>
+
+    <div class="project-card" data-cat="uitbouw"
+         data-title="Moderne Woonextensie" data-location="Diemen, 2023" data-area="45 m²" data-type="Uitbouw" data-year="2023"
+         data-desc="Een strakke glazen uitbouw aan de achterzijde van een jaren-50 woning. De toevoeging creëert een naadloze overgang tussen binnen en buiten, met vloer-tot-plafond beglazing.">
+      <div class="img-wrap">
+        <div class="card-placeholder p3">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="0" y="0" width="200" height="160"/><rect x="15" y="15" width="75" height="70"/><rect x="110" y="15" width="75" height="70"/><rect x="15" y="100" width="170" height="45"/><line x1="0" y1="0" x2="200" y2="160" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Uitbouw</div>
+          <div class="card-title">Moderne Woonextensie</div>
+          <div class="card-meta">Diemen · 2023 · 45 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-num">04</div>
-      <div class="service-icon"><i class="fa fa-couch"></i></div>
-      <div class="service-name">Interieur Maatwerk</div>
-      <p class="service-desc">Van keuken tot badkamer: maatwerk interieurs die perfect passen bij uw leefstijl en smaak.</p>
+
+    <div class="project-card" data-cat="interieur"
+         data-title="Maatwerk Keuken" data-location="Amsterdam, 2024" data-area="28 m²" data-type="Interieur" data-year="2024"
+         data-desc="Een volledig op maat gemaakte eilandkeuken in gelakt MDF met RVS-details. Inclusief verborgen opbergruimte, geïntegreerde apparatuur en maatwerk verlichting.">
+      <div class="img-wrap">
+        <div class="card-placeholder p4">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><polygon points="20,160 100,20 180,160"/><rect x="75" y="100" width="50" height="60"/><circle cx="100" cy="55" r="12"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Interieur</div>
+          <div class="card-title">Maatwerk Keuken</div>
+          <div class="card-meta">Amsterdam · 2024 · 28 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-num">05</div>
-      <div class="service-icon"><i class="fa fa-leaf"></i></div>
-      <div class="service-name">Duurzame Bouw</div>
-      <p class="service-desc">Energiezuinige oplossingen, duurzame materialen en toekomstgerichte bouwmethoden staan bij ons centraal.</p>
+
+    <div class="project-card" data-cat="duurzaam"
+         data-title="Energieneutrale Woning" data-location="Diemen, 2022" data-area="210 m²" data-type="Duurzaam" data-year="2022"
+         data-desc="Volledig energieneutrale nieuwbouwwoning met zonnepanelen, warmtepomp, uitstekende isolatie (Rc-waarde 7) en mechanische ventilatie met warmteterugwinning.">
+      <div class="img-wrap">
+        <div class="card-placeholder p5">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="0" y="80" width="200" height="80"/><circle cx="40" cy="55" r="28"/><circle cx="105" cy="38" r="38"/><circle cx="168" cy="60" r="22"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Duurzaam</div>
+          <div class="card-title">Energieneutrale Woning</div>
+          <div class="card-meta">Diemen · 2022 · 210 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-num">06</div>
-      <div class="service-icon"><i class="fa fa-comments"></i></div>
-      <div class="service-name">Transparante Communicatie</div>
-      <p class="service-desc">U wordt altijd op de hoogte gehouden. Heldere afspraken, eerlijke prijzen en geen verrassingen achteraf.</p>
+
+    <div class="project-card" data-cat="nieuwbouw"
+         data-title="Vrijstaande Stadsvilla" data-location="Amsterdam-Oost, 2024" data-area="520 m²" data-type="Nieuwbouw" data-year="2024"
+         data-desc="Een imposante stadsvilla op een royaal perceel. Drie verdiepingen, zwembad, huisbioscoop en een dakterras met panoramisch uitzicht over de stad.">
+      <div class="img-wrap">
+        <div class="card-placeholder p6">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="30" y="30" width="140" height="130"/><rect x="0" y="60" width="35" height="100"/><rect x="165" y="60" width="35" height="100"/><rect x="50" y="0" width="100" height="35"/><rect x="65" y="90" width="30" height="40"/><rect x="105" y="90" width="30" height="40"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Nieuwbouw</div>
+          <div class="card-title">Vrijstaande Stadsvilla</div>
+          <div class="card-meta">Amsterdam-Oost · 2024 · 520 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
     </div>
+
+    <div class="project-card" data-cat="renovatie"
+         data-title="Industrieel Loft" data-location="Amsterdam, 2023" data-area="180 m²" data-type="Renovatie" data-year="2023"
+         data-desc="Transformatie van een voormalige fabrieksruimte tot luxe loftappartement. Originele staalconstructie bewaard en gecombineerd met beton, hout en glas.">
+      <div class="img-wrap">
+        <div class="card-placeholder p7">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="10" y="10" width="180" height="140"/><line x1="10" y1="55" x2="190" y2="55" stroke="rgba(255,255,255,0.4)" stroke-width="2"/><line x1="10" y1="100" x2="190" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="2"/><rect x="25" y="20" width="35" height="30"/><rect x="80" y="20" width="35" height="30"/><rect x="135" y="20" width="35" height="30"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Renovatie</div>
+          <div class="card-title">Industrieel Loft</div>
+          <div class="card-meta">Amsterdam · 2023 · 180 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="uitbouw"
+         data-title="Glazen Serre Uitbouw" data-location="Diemen, 2024" data-area="32 m²" data-type="Uitbouw" data-year="2024"
+         data-desc="Een lichte serre-uitbouw met geïntegreerde vloerverwarming en zonwering. Staal- en glasconstructie met thermisch onderbroken profielen voor optimale isolatie.">
+      <div class="img-wrap">
+        <div class="card-placeholder p8">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="0" y="40" width="130" height="120"/><polygon points="130,40 200,80 200,160 130,160"/><rect x="20" y="60" width="40" height="50"/><rect x="75" y="60" width="40" height="50"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Uitbouw</div>
+          <div class="card-title">Glazen Serre Uitbouw</div>
+          <div class="card-meta">Diemen · 2024 · 32 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="nieuwbouw"
+         data-title="Moderne Bungalow" data-location="Diemen-Zuid, 2021" data-area="195 m²" data-type="Nieuwbouw" data-year="2021"
+         data-desc="Een eenlaagse bungalow met plat dak en uitgestrekte glazen pui. Ruimtelijke planning met open woonkeuken, twee slaapkamers en een wellness-badkamer.">
+      <div class="img-wrap">
+        <div class="card-placeholder p9">
+          <svg class="bldg" viewBox="0 0 200 160" fill="rgba(255,255,255,0.5)"><rect x="0" y="50" width="200" height="110"/><rect x="0" y="40" width="200" height="12"/><rect x="15" y="70" width="60" height="70"/><rect x="90" y="70" width="95" height="70"/></svg>
+        </div>
+        <div class="card-overlay"></div>
+        <div class="card-info">
+          <div class="card-category">Nieuwbouw</div>
+          <div class="card-title">Moderne Bungalow</div>
+          <div class="card-meta">Diemen-Zuid · 2021 · 195 m²</div>
+        </div>
+        <button class="card-expand-btn"><i class="fa fa-expand"></i></button>
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults">Geen projecten gevonden in deze categorie.</div>
   </div>
 </section>
 
-<!-- GALLERY CAROUSEL -->
-<section id="gallery">
-  <div class="gallery-header">
-    <div class="section-label reveal">Portfolio</div>
-    <h2 class="section-title reveal">Onze <strong>Projecten</strong></h2>
-  </div>
-  <div class="carousel-outer">
-    <div class="carousel-track-wrap" id="carouselWrap">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-card">
-          <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2638 0%,#2c3e50 100%);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 100 80" style="width:60%;opacity:0.1;" fill="white"><rect x="5" y="30" width="90" height="50"/><polygon points="5,30 50,5 95,30"/><rect x="40" y="50" width="20" height="30"/></svg></div>
-          <div class="cc-glow"></div>
-          <div class="carousel-card-overlay"></div>
-          <div class="carousel-card-info">
-            <div class="cc-cat">Nieuwbouw</div>
-            <div class="cc-title">Luxe Villa Diemen</div>
+<!-- FEATURED SPREAD -->
+<section id="featured">
+  <div class="featured-bg-text">Destino</div>
+  <div style="position:relative;z-index:2;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:48px;opacity:0;" class="reveal-fade">
+      <div style="width:24px;height:1px;background:var(--gold);"></div>
+      <div style="font-family:var(--font-c);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;">Uitgelicht project</div>
+    </div>
+    <div class="featured-grid reveal-fade" style="transition-delay:.1s">
+      <div class="featured-main">
+        <div class="feat-ph p1" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 300 240" style="width:55%;opacity:0.08;" fill="white"><rect x="20" y="80" width="260" height="160"/><polygon points="20,80 150,15 280,80"/><rect x="115" y="140" width="70" height="100"/><rect x="45" y="100" width="50" height="40"/><rect x="205" y="100" width="50" height="40"/></svg>
+        </div>
+        <div class="feat-overlay"></div>
+        <div class="feat-main-info">
+          <div class="feat-eyebrow">Uitgelicht · Nieuwbouw 2024</div>
+          <div class="feat-title"><strong>Vrijstaande</strong><br>Stadsvilla</div>
+          <div class="feat-desc">Ons meest ambitieuze project van 2024 — een imposante stadsvilla van 520 m² met zwembad, huisbioscoop en panoramisch dakterras.</div>
+        </div>
+      </div>
+      <div class="featured-side">
+        <div class="featured-side-item">
+          <div class="feat-ph p6" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 200 160" style="width:50%;opacity:0.08;" fill="white"><rect x="0" y="0" width="200" height="160"/><rect x="15" y="15" width="75" height="70"/><rect x="110" y="15" width="75" height="70"/></svg></div>
+          <div class="feat-overlay"></div>
+          <div class="feat-side-info">
+            <div class="feat-side-cat">Renovatie · 2023</div>
+            <div class="feat-side-name">Industrieel Loft</div>
           </div>
         </div>
-        <div class="carousel-card">
-          <div class="img-placeholder" style="background:linear-gradient(135deg,#1c2b3a 0%,#243447 100%);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 100 80" style="width:60%;opacity:0.1;" fill="white"><rect x="0" y="20" width="45" height="60"/><rect x="55" y="30" width="45" height="50"/><rect x="20" y="0" width="60" height="25"/></svg></div>
-          <div class="cc-glow"></div>
-          <div class="carousel-card-overlay"></div>
-          <div class="carousel-card-info">
-            <div class="cc-cat">Renovatie</div>
-            <div class="cc-title">Klassiek Herenhuis</div>
-          </div>
-        </div>
-        <div class="carousel-card">
-          <div class="img-placeholder" style="background:linear-gradient(135deg,#192536 0%,#223044 100%);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 100 80" style="width:60%;opacity:0.1;" fill="white"><rect x="0" y="0" width="100" height="80"/><rect x="10" y="10" width="35" height="35"/><rect x="55" y="10" width="35" height="35"/><rect x="10" y="55" width="80" height="15"/></svg></div>
-          <div class="cc-glow"></div>
-          <div class="carousel-card-overlay"></div>
-          <div class="carousel-card-info">
-            <div class="cc-cat">Uitbouw</div>
-            <div class="cc-title">Moderne Woonextensie</div>
-          </div>
-        </div>
-        <div class="carousel-card">
-          <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2840 0%,#243550 100%);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 100 80" style="width:60%;opacity:0.1;" fill="white"><polygon points="10,80 50,10 90,80"/><rect x="35" y="50" width="30" height="30"/></svg></div>
-          <div class="cc-glow"></div>
-          <div class="carousel-card-overlay"></div>
-          <div class="carousel-card-info">
-            <div class="cc-cat">Interieur</div>
-            <div class="cc-title">Maatwerk Keuken</div>
-          </div>
-        </div>
-        <div class="carousel-card">
-          <div class="img-placeholder" style="background:linear-gradient(135deg,#16223a 0%,#1f3050 100%);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 100 80" style="width:60%;opacity:0.1;" fill="white"><rect x="0" y="40" width="100" height="40"/><circle cx="20" cy="30" r="18"/><circle cx="60" cy="20" r="22"/><circle cx="90" cy="35" r="14"/></svg></div>
-          <div class="cc-glow"></div>
-          <div class="carousel-card-overlay"></div>
-          <div class="carousel-card-info">
-            <div class="cc-cat">Duurzaam</div>
-            <div class="cc-title">Energieneutrale Woning</div>
+        <div class="featured-side-item">
+          <div class="feat-ph p5" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 200 160" style="width:50%;opacity:0.08;" fill="white"><rect x="0" y="80" width="200" height="80"/><circle cx="100" cy="40" r="38"/></svg></div>
+          <div class="feat-overlay"></div>
+          <div class="feat-side-info">
+            <div class="feat-side-cat">Duurzaam · 2022</div>
+            <div class="feat-side-name">Energieneutrale Woning</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="carPrev"><i class="fa fa-arrow-left"></i></button>
-      <button class="carousel-btn" id="carNext"><i class="fa fa-arrow-right"></i></button>
+  </div>
+</section>
+
+<!-- INTERLUDE -->
+<section id="interlude">
+  <div class="stat-block reveal-fade">
+    <div class="stat-num"><span class="cnt2" data-t="200">0</span><sup>+</sup></div>
+    <div class="stat-label">Voltooide projecten</div>
+    <div class="stat-desc">Van kleine verbouwing tot luxe nieuwbouw</div>
+  </div>
+  <div class="stat-block reveal-fade" style="transition-delay:.1s">
+    <div class="stat-num"><span class="cnt2" data-t="15">0</span><sup>+</sup></div>
+    <div class="stat-label">Jaar vakmanschap</div>
+    <div class="stat-desc">In de regio Diemen en omstreken</div>
+  </div>
+  <div class="stat-block reveal-fade" style="transition-delay:.2s">
+    <div class="stat-num"><span class="cnt2" data-t="98">0</span><sup>%</sup></div>
+    <div class="stat-label">Tevreden klanten</div>
+    <div class="stat-desc">Op basis van nazorgonderzoek</div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-header">
+    <div class="book-label">Werkwijze</div>
+    <h2 class="book-title">Van idee tot <strong>oplevering</strong></h2>
+    <p class="book-text" style="margin-top:16px">Wij begeleiden u door elk onderdeel van het bouwproces. Transparant, gestructureerd en met persoonlijke aandacht.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal-fade">
+      <div class="step-num-wrap"><div class="step-num">01</div></div>
+      <div class="step-title">Kennismaking</div>
+      <div class="step-desc">Vrijblijvend gesprek over uw wensen, locatie en mogelijkheden.</div>
+    </div>
+    <div class="process-step reveal-fade" style="transition-delay:.1s">
+      <div class="step-num-wrap"><div class="step-num">02</div></div>
+      <div class="step-title">Ontwerp</div>
+      <div class="step-desc">Samen met architect of in eigen beheer tot een definitief plan.</div>
+    </div>
+    <div class="process-step reveal-fade" style="transition-delay:.2s">
+      <div class="step-num-wrap"><div class="step-num">03</div></div>
+      <div class="step-title">Offerte</div>
+      <div class="step-desc">Gedetailleerde prijs inclusief materialen, arbeid en planning.</div>
+    </div>
+    <div class="process-step reveal-fade" style="transition-delay:.3s">
+      <div class="step-num-wrap"><div class="step-num">04</div></div>
+      <div class="step-title">Realisatie</div>
+      <div class="step-desc">Vakkundige uitvoering met wekelijkse voortgangsrapportage.</div>
+    </div>
+    <div class="process-step reveal-fade" style="transition-delay:.4s">
+      <div class="step-num-wrap"><div class="step-num">05</div></div>
+      <div class="step-title">Oplevering</div>
+      <div class="step-desc">Sleuteloverdracht met nazorg en 5 jaar garantie op bouwkundige werken.</div>
     </div>
   </div>
 </section>
 
-<!-- GRID GALLERY -->
-<section id="grid-gallery">
-  <div class="grid-gallery">
-    <div class="gg-item">
-      <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2638,#2c4060);position:absolute;inset:0;"></div>
-      <div class="gg-overlay"></div>
-      <div class="gg-label">Villa Project</div>
-    </div>
-    <div class="gg-item">
-      <div class="img-placeholder" style="background:linear-gradient(135deg,#243040,#1a2035);position:absolute;inset:0;"></div>
-      <div class="gg-overlay"></div>
-      <div class="gg-label">Renovatie</div>
-    </div>
-    <div class="gg-item">
-      <div class="img-placeholder" style="background:linear-gradient(135deg,#1c2a3a,#2a3848);position:absolute;inset:0;"></div>
-      <div class="gg-overlay"></div>
-      <div class="gg-label">Interieur</div>
-    </div>
-    <div class="gg-item">
-      <div class="img-placeholder" style="background:linear-gradient(135deg,#182030,#243040);position:absolute;inset:0;"></div>
-      <div class="gg-overlay"></div>
-      <div class="gg-label">Uitbouw</div>
-    </div>
-    <div class="gg-item">
-      <div class="img-placeholder" style="background:linear-gradient(135deg,#202838,#2c3848);position:absolute;inset:0;"></div>
-      <div class="gg-overlay"></div>
-      <div class="gg-label">Nieuwbouw</div>
-    </div>
-    <div class="gg-item">
-      <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2435,#263244);position:absolute;inset:0;"></div>
-      <div class="gg-overlay"></div>
-      <div class="gg-label">Duurzaam</div>
-    </div>
-  </div>
+<!-- TESTIMONIAL -->
+<section id="testimonial">
+  <div class="test-deco-l">"</div>
+  <div class="test-deco-r">"</div>
+  <div class="test-line"></div>
+  <blockquote class="test-quote reveal-fade">
+    Destino heeft onze visie volledig begrepen en precies gerealiseerd wat wij voor ogen hadden — een woning waar wij iedere dag van genieten. Echt vakmanschap.
+  </blockquote>
+  <div class="test-author reveal-fade" style="transition-delay:.15s">Familie De Vries, Diemen · Nieuwbouw 2023</div>
+  <div class="test-line"></div>
 </section>
 
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-glow"></div>
-  <div class="cta-inner">
-    <div class="section-label reveal" style="color:rgba(255,255,255,0.4);">Klaar om te starten?</div>
-    <h2 class="cta-title reveal">Vraag vrijblijvend een <strong>offerte</strong> aan</h2>
-    <p class="cta-sub reveal">Vertel ons over uw project en wij nemen snel contact met u op voor een persoonlijk gesprek.</p>
-    <a href="mailto:c.ramos@bouwbedrijfdestino.nl" class="cta-btn reveal">
-      <span>Stuur ons een bericht</span>
+<!-- CTA SPREAD -->
+<section id="cta-spread">
+  <div class="cta-left reveal-fade">
+    <div class="cta-eyebrow">Klaar om te starten?</div>
+    <h2 class="cta-title">Uw project<br><strong>begint hier</strong></h2>
+    <p class="cta-sub">Vertel ons over uw plannen en wij nemen binnen 24 uur contact op voor een vrijblijvend adviesgesprek.</p>
+    <a href="mailto:c.ramos@bouwbedrijfdestino.nl" class="cta-btn">
+      <span>Stuur een bericht</span>
       <i class="fa fa-arrow-right"></i>
     </a>
   </div>
+  <div class="cta-sep"></div>
+  <div class="cta-right reveal-fade" style="transition-delay:.1s">
+    <div class="book-label">Directe contactgegevens</div>
+    <div class="cta-contact-list">
+      <div class="cta-contact-item">
+        <div class="cci-icon"><i class="fa fa-phone"></i></div>
+        <div>
+          <div class="cci-label">Telefoon</div>
+          <div class="cci-val"><a href="tel:+31630302695">+31 6 3030 2695</a></div>
+        </div>
+      </div>
+      <div class="cta-contact-item">
+        <div class="cci-icon"><i class="fa fa-envelope"></i></div>
+        <div>
+          <div class="cci-label">E-mail</div>
+          <div class="cci-val"><a href="mailto:c.ramos@bouwbedrijfdestino.nl">c.ramos@bouwbedrijfdestino.nl</a></div>
+        </div>
+      </div>
+      <div class="cta-contact-item">
+        <div class="cci-icon"><i class="fa fa-map-marker-alt"></i></div>
+        <div>
+          <div class="cci-label">Kantoor</div>
+          <div class="cci-val">Julianaplantsoen 197, Diemen</div>
+        </div>
+      </div>
+      <div class="cta-contact-item">
+        <div class="cci-icon"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <div class="cci-label">WhatsApp</div>
+          <div class="cci-val"><a href="https://wa.me/31630302695">Direct berichtje sturen</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
 <!-- FOOTER -->
 <footer id="footer" class="footer">
   <div class="footer-top">
