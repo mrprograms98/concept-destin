@@ -3,323 +3,646 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="page-title">Over ons - Bouwbedrijf Destino B.V.</title>
+  <title>Over Ons — Bouwbedrijf Destino B.V.</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Leer meer over Bouwbedrijf Destino B.V. — ons team, onze waarden en ons vakmanschap in exclusieve bouw en renovatie in Diemen.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta name="description" content="Bouwbedrijf Destino B.V. staat voor betrouwbaarheid en vakmanschap. Leer ons team en onze missie kennen in Diemen.">
-  <meta name="keywords" content="Bouwbedrijf, over ons, team, vakmanschap, betrouwbaarheid, Diemen">
-  <meta name="author" content="Bouwbedrijf Destino B.V.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://bouwbedrijfdestino.nl/overons.html">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Over ons – Bouwbedrijf Destino B.V.">
-  <meta property="og:description" content="Bouwbedrijf Destino B.V. staat voor betrouwbaarheid en vakmanschap. Leer ons team en onze missie kennen.">
-  <meta property="og:image" content="https://bouwbedrijfdestino.nl/images/destinologo.png">
-  <meta property="og:url" content="https://bouwbedrijfdestino.nl/overons.html">
-  <meta property="og:type" content="website">
+  <!-- OVERONS-SPECIFIC STYLES — voeg toe aan css/style.css -->
+  <style>
+    /* ── TIJDLIJN ── */
+    #timeline {
+      background: var(--white);
+      padding: 120px 60px;
+    }
+    .timeline-inner { max-width: 900px; margin: 0 auto; position: relative; }
+    .timeline-spine {
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 1px; background: rgba(0,0,0,0.08);
+      transform: translateX(-50%);
+    }
+    .timeline-spine::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 1px; height: 0;
+      background: var(--red);
+      transition: height 1.2s ease;
+    }
+    .timeline-spine.animate::before { height: 100%; }
+    .tl-item {
+      display: grid; grid-template-columns: 1fr 60px 1fr;
+      align-items: start; margin-bottom: 72px; position: relative;
+    }
+    .tl-left { text-align: right; padding-right: 40px; }
+    .tl-right { padding-left: 40px; }
+    .tl-item:nth-child(even) .tl-left { order: 3; text-align: left; padding-right: 0; padding-left: 40px; }
+    .tl-item:nth-child(even) .tl-mid { order: 2; }
+    .tl-item:nth-child(even) .tl-right { order: 1; text-align: right; padding-left: 0; padding-right: 40px; }
+    .tl-dot {
+      width: 14px; height: 14px; background: var(--white);
+      border: 2px solid var(--red); border-radius: 50%;
+      margin: 6px auto 0; position: relative; z-index: 2;
+      transition: background 0.3s;
+    }
+    .tl-item:hover .tl-dot { background: var(--red); }
+    .tl-year {
+      font-family: var(--font-caps); font-size: 9px; letter-spacing: 3px;
+      color: var(--red); text-transform: uppercase; margin-bottom: 8px;
+    }
+    .tl-title {
+      font-family: var(--font-display); font-size: 20px; font-weight: 600;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .tl-desc { font-size: 13px; line-height: 1.8; color: #778; font-weight: 300; }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Over ons – Bouwbedrijf Destino B.V.">
-  <meta name="twitter:description" content="Bouwbedrijf Destino B.V. staat voor betrouwbaarheid en vakmanschap. Leer ons team en onze missie kennen.">
-  <meta name="twitter:image" content="https://bouwbedrijfdestino.nl/images/destinologo.png">
+    /* ── WAARDEN ── */
+    #waarden {
+      background: var(--navy);
+      padding: 120px 60px;
+      position: relative; overflow: hidden;
+    }
+    .waarden-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(192,57,43,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .waarden-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2px; position: relative; z-index: 2; margin-top: 64px;
+    }
+    .waarde-card {
+      padding: 48px 36px;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative; overflow: hidden;
+      transition: border-color 0.4s, transform 0.4s var(--ease);
+    }
+    .waarde-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--red);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s var(--ease);
+    }
+    .waarde-card:hover { border-color: rgba(192,57,43,0.25); transform: translateY(-6px); }
+    .waarde-card:hover::before { transform: scaleX(1); }
+    .waarde-icon {
+      font-size: 28px; color: var(--red);
+      margin-bottom: 24px; display: block;
+    }
+    .waarde-num {
+      position: absolute; top: 20px; right: 24px;
+      font-family: var(--font-display); font-size: 52px; font-weight: 700;
+      color: rgba(255,255,255,0.03); line-height: 1;
+    }
+    .waarde-title {
+      font-family: var(--font-display); font-size: 20px; font-weight: 600;
+      color: var(--white); margin-bottom: 14px;
+    }
+    .waarde-desc { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.4); font-weight: 300; }
+
+    /* ── TEAM ── */
+    #team {
+      background: var(--light-grey);
+      padding: 120px 60px;
+    }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 64px; }
+    .team-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s;
+    }
+    .team-card:hover { transform: translateY(-8px); box-shadow: 0 32px 80px rgba(13,31,60,0.12); }
+    .team-img {
+      width: 100%; aspect-ratio: 3/4; overflow: hidden;
+      background: var(--navy); position: relative;
+    }
+    .team-img-ph {
+      width: 100%; height: 100%;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 20px;
+    }
+    .team-img::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 40%; background: linear-gradient(0deg, var(--navy) 0%, transparent 100%);
+    }
+    .team-info { padding: 28px 28px 32px; }
+    .team-name { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text-dark); }
+    .team-role { font-family: var(--font-caps); font-size: 10px; letter-spacing: 2.5px; color: var(--red); text-transform: uppercase; margin-top: 4px; margin-bottom: 12px; }
+    .team-bio { font-size: 13px; line-height: 1.8; color: #778; font-weight: 300; }
+    .team-socials { display: flex; gap: 10px; margin-top: 20px; }
+    .team-soc {
+      width: 32px; height: 32px; border: 1px solid rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--grey);
+      text-decoration: none; cursor: none;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .team-soc:hover { border-color: var(--red); color: var(--red); }
+
+    /* ── PARTNERS ── */
+    #partners {
+      background: var(--white);
+      padding: 80px 60px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .partners-label {
+      font-family: var(--font-caps); font-size: 10px; letter-spacing: 4px;
+      color: var(--grey); text-transform: uppercase;
+      text-align: center; margin-bottom: 48px;
+    }
+    .partners-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 64px; flex-wrap: wrap;
+    }
+    .partner-item {
+      font-family: var(--font-display); font-size: 18px; font-weight: 600;
+      color: rgba(0,0,0,0.18); transition: color 0.3s; cursor: none;
+      letter-spacing: 1px;
+    }
+    .partner-item:hover { color: var(--navy); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .waarden-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      #timeline { padding: 80px 24px; }
+      .timeline-spine { display: none; }
+      .tl-item { grid-template-columns: 1fr; gap: 8px; }
+      .tl-left, .tl-right { padding: 0; text-align: left; }
+      .tl-item:nth-child(even) .tl-left,
+      .tl-item:nth-child(even) .tl-right { order: unset; text-align: left; padding: 0; }
+      .tl-mid { display: none; }
+      #waarden { padding: 80px 24px; }
+      .waarden-grid { grid-template-columns: 1fr; }
+      #team { padding: 80px 24px; }
+      .team-grid { grid-template-columns: 1fr; }
+      #partners { padding: 60px 24px; }
+      .partners-row { gap: 32px; }
+    }
+  </style>
 </head>
 <body>
-<div class="preloader">
-    <div class="preloader-content">
-        <img src="images/destinologo.png" alt="Bouwbedrijf Destino Logo">
-        <h2>dit zijn wij!</h2>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo">
+    <svg viewBox="0 0 52 60" fill="none">
+      <rect x="0" y="20" width="14" height="40" fill="#C0392B"/>
+      <rect x="19" y="10" width="14" height="50" fill="#C0392B"/>
+      <rect x="38" y="0" width="14" height="60" fill="#C0392B"/>
+    </svg>
+    <div class="preloader-logo-text">
+      <div class="brand">Bouwbedrijf</div>
+      <div class="name">Destino</div>
     </div>
-</div>
- 
-<section class="hero-wrapper">
-
-<div class="scroll-gallery">
-    <img src="images/H9609.jpg" alt="background 1" class="bg-slide active">
-    <img src="images/H9610.jpg" alt="background 2" class="bg-slide">
+  </div>
+  <div class="preloader-bar-wrap">
+    <div class="preloader-bar" id="pbar"></div>
+  </div>
+  <div class="preloader-pct" id="ppct">0%</div>
 </div>
 
-<header class="header">
-  <div class="logo"><h1><a href="index.html"><img src="images/destinologo.png" width="135" height="90" alt="logo"></a></h1></div>
-
-  <nav class="nav-menu" id="menu">
-    <ul>
-    <li class="menu-logo">
-      <img src="images/destinologo.png" alt="Bouwbedrijf Destino Logo">
-    </li>
-      <li><a href="index.html" data-key="nav-home">Home</a></li>
-      <li><a href="overons.html" data-key="nav-about">Over ons</a></li>
-      <li><a href="diensten.html" data-key="nav-services">Diensten</a></li>
-      <li><a href="portfolio.html" data-key="nav-portfolio">Portfolio</a></li>
-      <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
-<div class="lang-switch">
-    <button class="lang-btn" onclick="setLanguage('nl')">NL</button>
-    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-    <button class="lang-btn" onclick="setLanguage('ar')">AR</button>
-    <button class="lang-btn" onclick="setLanguage('prt')">PRT</button>
-    <button class="lang-btn" onclick="setLanguage('cn')">CN</button>
-</div>
-    </ul>
-  </nav>
-
-  <!-- Hamburger -->
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-text">
+      <img src="images/logotransparant.png" class="nav-logo-img">
+    </div>
+  </a>
+  <div class="nav-center">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="overons.html" class="nav-link">Over ons</a>
+    <a href="diensten.html" class="nav-link">Diensten</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="nl">NL</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="ar">AR</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="pt">PR</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="zh">CN</button>
+    </div>
+    <a href="contact.html" class="nav-cta"><span>Contact</span></a>
+  </div>
   <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
-</header>
+</nav>
 
-    <!-- HERO -->
-   <section class="hero">
-    <div class="hero-content">
-        <h2>Bouwbedrijf Destino B.V.</h2>
-        <h3 data-key="hero-title">Exclusieve Bouw van Uw Droomhuis</h3>
-        <p data-key="hero-subtitle">Wij realiseren luxe woningen op maat, met oog voor kwaliteit en design.</p>
-        <a href="contact.html" class="btn" data-key="contact-button">Neem Contact Op</a>
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="index.html" class="mobile-nav-item">Home</a>
+  <a href="overons.html" class="mobile-nav-item">Over ons</a>
+  <a href="diensten.html" class="mobile-nav-item">Diensten</a>
+  <a href="portfolio.html" class="mobile-nav-item">Portfolio</a>
+  <a href="contact.html" class="mobile-nav-item">Contact</a>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn">NL</button>
+    <button class="mobile-lang-btn">EN</button>
+    <button class="mobile-lang-btn">AR</button>
+    <button class="mobile-lang-btn">PR</button>
+    <button class="mobile-lang-btn">CN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-img-wrap">
+    <div class="img-placeholder" style="background: linear-gradient(135deg,#0d1f3c 0%,#1a3a5c 100%); position:relative;">
+      <svg viewBox="0 0 300 300" style="width:60%;height:60%;opacity:0.06;" fill="white">
+        <rect x="20" y="100" width="60" height="200"/>
+        <rect x="120" y="60" width="60" height="240"/>
+        <rect x="220" y="30" width="60" height="270"/>
+      </svg>
     </div>
-
-    <!-- SLIDER ARROWS -->
-    <button id="bg-prev" class="bg-arrow left-arrow">&#10094;</button>
-    <button id="bg-next" class="bg-arrow right-arrow">&#10095;</button>
-  </section>
+    <div class="hero-img-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-label">Ons verhaal — Diemen</div>
+    <h1 class="hero-title">
+      <strong>Over Destino</strong>
+      <em>Vakmanschap met een menselijk gezicht</em>
+    </h1>
+    <p class="hero-sub">Bouwbedrijf Destino B.V. bestaat uit een team van gedreven vakmensen die geloven dat bouwen meer is dan stenen stapelen — het is een droom realiseren.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-primary"><span>Neem Contact Op</span></a>
+      <a href="#timeline" class="btn-ghost"><span>Ons Verhaal</span> <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num"><span class="count" data-target="15">0</span><sup>+</sup></div>
+      <div class="lbl">Jaar ervaring</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num"><span class="count" data-target="200">0</span><sup>+</sup></div>
+      <div class="lbl">Projecten</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num"><span class="count" data-target="98">0</span><sup>%</sup></div>
+      <div class="lbl">Tevreden klanten</div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
 </section>
 
-  <!-- HERO -->
-  <section class="hero" style="background:url('hero-overons.jpg') center/cover no-repeat;">
-    <div class="hero-content">
-      <h2 data-key="hero-title">Over ons</h2>
-      <p data-key="hero-subtitle">Wij zijn Bouwbedrijf Destino B.V. – gespecialiseerd in luxe woningbouw op maat.</p>
-      
-    </div>
-  </section>
-
-<!-- OVER ONS -->
+<!-- ABOUT INTRO -->
 <section id="about">
   <div class="about-img-wrap reveal">
-    <div class="img-placeholder">Destino B.V.</div>
-    <div class="about-img-tag">
-      <div class="t1">25<sup>+</sup></div>
-      <div class="t2">Jaar Ervaring</div>
+    <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2a3a 0%,#2a3a4a 100%); position:relative; width:100%; height:100%;">
+      <svg viewBox="0 0 200 200" style="width:50%;opacity:0.08;" fill="#0d1f3c">
+        <rect x="10" y="50" width="40" height="150"/>
+        <rect x="80" y="20" width="40" height="180"/>
+        <rect x="150" y="0" width="40" height="200"/>
+      </svg>
     </div>
     <div class="about-img-border"></div>
+    <div class="about-img-tag">
+      <div class="t1">2009</div>
+      <div class="t2">Opgericht</div>
+    </div>
   </div>
-
-  <div class="about-content reveal">
-    <div class="section-label" data-key="about-label">Over Ons</div>
-    <h2 class="section-title" data-key="about-heading">
-      Onze <strong>Ervaring</strong>
-    </h2>
-    <div class="divider"></div>
-    <p class="about-text" data-key="about-p1">Bij Destino B.V. combineren we exclusiviteit en vakmanschap om bouwprojecten te creëren die zowel esthetisch verbluffend als tijdloos zijn.</p>
-    <p class="about-text" data-key="about-p2">Onze kracht schuilt in het begrijpen van de essentie van luxe — het draait niet om overdaad, maar om perfectie in elk detail.</p>
-    <p class="about-text" data-key="about-p3">Onze vakmensen brengen decennialange ervaring samen met innovatieve technieken, waardoor traditie en moderniteit naadloos samensmelten.</p>
-    <p class="about-text" data-key="about-p4">Voor ons is bouwen meer dan constructie: het is een kunstvorm, een beleving, een plek waar comfort en design samenkomen.</p>
-
-    <div class="about-signature">
-      <div class="about-sig-img">
-        <span>D</span>
-      </div>
+  <div class="about-content">
+    <div class="section-label reveal">Ons verhaal</div>
+    <h2 class="section-title reveal">Meer dan <strong>15 jaar</strong><br>bouwen met passie</h2>
+    <div class="divider reveal"></div>
+    <p class="about-text reveal">Bouwbedrijf Destino B.V. werd in 2009 opgericht door Carlos Ramos met één doel voor ogen: exclusieve bouw leveren waarbij kwaliteit en persoonlijk contact voorop staan. Wat begon als een eenmanszaak groeide uit tot een team van 18 vakmensen.</p>
+    <p class="about-text reveal">Wij werken volgens het principe dat elk project uniek is. Geen standaard oplossingen, maar maatwerk dat aansluit bij uw leefstijl, smaak en budget. Van de eerste schets tot het laatste detail — Destino staat voor u klaar.</p>
+    <div class="about-signature reveal">
+      <div class="about-sig-img"><span>CR</span></div>
       <div class="about-sig-info">
-        <div class="name" data-key="about-signature">Destino B.V.</div>
-        <div class="role">Wij bouwen met passie, creëren met visie</div>
+        <div class="name">Carlos Ramos</div>
+        <div class="role">Oprichter & Algemeen Directeur</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MISSIE, TEAM & CTA -->
-<section id="services">
-  <div class="section-header reveal">
-    <div class="section-label">Waar wij voor staan</div>
-    <h2 class="section-title"><strong>Missie</strong> &amp; Team</h2>
+<!-- TIJDLIJN -->
+<section id="timeline">
+  <div class="section-header">
+    <div class="section-label reveal">Onze groei</div>
+    <h2 class="section-title reveal">Een <strong>bewogen</strong> geschiedenis</h2>
   </div>
+  <div class="timeline-inner">
+    <div class="timeline-spine" id="timelineSpine"></div>
 
-  <div class="services-grid">
-    <!-- Missie -->
-    <div class="service-card reveal">
-      <div class="service-num">01</div>
-      <div class="service-icon">
-        <i class="fas fa-bullseye"></i>
+    <div class="tl-item reveal">
+      <div class="tl-left">
+        <div class="tl-year">2009</div>
+        <div class="tl-title">Oprichting</div>
+        <div class="tl-desc">Carlos Ramos richt Destino op als eenmanszaak met focus op renovaties in de regio Diemen.</div>
       </div>
-      <div class="service-name" data-key="mission-heading">Onze Missie</div>
-      <p class="service-desc" data-key="mission-text">
-        Ons streven is dat elk huis een meesterwerk wordt. Met meer dan 25 jaar ervaring combineren we vakmanschap, innovatie en duurzame materialen om uw droomwoning tot leven te brengen.
-      </p>
+      <div class="tl-mid"><div class="tl-dot"></div></div>
+      <div class="tl-right"></div>
     </div>
 
-    <!-- Team -->
-    <div class="service-card reveal">
-      <div class="service-num">02</div>
-      <div class="service-icon">
-        <i class="fas fa-users"></i>
+    <div class="tl-item reveal">
+      <div class="tl-left"></div>
+      <div class="tl-mid"><div class="tl-dot"></div></div>
+      <div class="tl-right">
+        <div class="tl-year">2013</div>
+        <div class="tl-title">B.V.-status</div>
+        <div class="tl-desc">Destino wordt omgezet naar een B.V. Het team groeit naar 6 vaste medewerkers en het eerste nieuwbouwproject wordt opgeleverd.</div>
       </div>
-      <div class="service-name" data-key="team-heading">Ons Team</div>
-      <p class="service-desc" data-key="team-text">
-        Ons team van architecten, bouwkundigen en interieurontwerpers werkt nauw met u samen, zodat elk detail van uw woning met uiterste precisie wordt gerealiseerd.
-      </p>
     </div>
 
-    <!-- CTA card -->
-    <div class="service-card reveal">
-      <div class="service-num">03</div>
-      <div class="service-icon">
-        <i class="fas fa-handshake"></i>
+    <div class="tl-item reveal">
+      <div class="tl-left">
+        <div class="tl-year">2017</div>
+        <div class="tl-title">Uitbreiding regio</div>
+        <div class="tl-desc">Destino breidt uit naar Amsterdam en omstreken. De eerste luxe villa wordt opgeleverd in Amsterdam-Oost.</div>
       </div>
-      <div class="service-name">Wilt u samenwerken?</div>
-      <p class="service-desc">Neem contact met ons op en bespreek uw bouwproject met onze specialisten.</p>
-      <br>
-      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:16px;">
-        <span>Offerte aanvragen</span>
+      <div class="tl-mid"><div class="tl-dot"></div></div>
+      <div class="tl-right"></div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-left"></div>
+      <div class="tl-mid"><div class="tl-dot"></div></div>
+      <div class="tl-right">
+        <div class="tl-year">2020</div>
+        <div class="tl-title">Duurzame bouw</div>
+        <div class="tl-desc">Destino lanceert een duurzame bouwlijn. Alle nieuwbouwprojecten worden voortaan energieneutraal ontworpen.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-left">
+        <div class="tl-year">2024</div>
+        <div class="tl-title">200+ projecten</div>
+        <div class="tl-desc">Destino rondt haar 200ste project af. Het team telt 18 vaste vakmensen en groeit door als toonaangevend bouwbedrijf in de regio.</div>
+      </div>
+      <div class="tl-mid"><div class="tl-dot"></div></div>
+      <div class="tl-right"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAARDEN -->
+<section id="waarden">
+  <div class="waarden-bg"></div>
+  <div style="position:relative;z-index:2;">
+    <div class="section-header">
+      <div class="section-label reveal" style="color:rgba(255,255,255,0.4); justify-content:center;">Waarom Destino</div>
+      <h2 class="section-title reveal" style="color:var(--white);">Onze <strong>kernwaarden</strong></h2>
+    </div>
+    <div class="waarden-grid">
+      <div class="waarde-card reveal">
+        <div class="waarde-num">01</div>
+        <i class="waarde-icon fa fa-medal"></i>
+        <div class="waarde-title">Kwaliteit</div>
+        <p class="waarde-desc">Wij gebruiken uitsluitend gecertificeerde materialen en werken met ervaren vakmensen. Elk project wordt opgeleverd met 5 jaar garantie.</p>
+      </div>
+      <div class="waarde-card reveal">
+        <div class="waarde-num">02</div>
+        <i class="waarde-icon fa fa-handshake"></i>
+        <div class="waarde-title">Transparantie</div>
+        <p class="waarde-desc">Geen verborgen kosten. Wij communiceren helder over planning, budget en voortgang — zodat u altijd weet waar u aan toe bent.</p>
+      </div>
+      <div class="waarde-card reveal">
+        <div class="waarde-num">03</div>
+        <i class="waarde-icon fa fa-leaf"></i>
+        <div class="waarde-title">Duurzaamheid</div>
+        <p class="waarde-desc">Bouwen voor de toekomst. Wij integreren energiezuinige oplossingen en duurzame materialen in elk nieuw project.</p>
+      </div>
+      <div class="waarde-card reveal">
+        <div class="waarde-num">04</div>
+        <i class="waarde-icon fa fa-user-tie"></i>
+        <div class="waarde-title">Vakmanschap</div>
+        <p class="waarde-desc">Meer dan 15 jaar ervaring in exclusieve bouw. Ons team combineert traditioneel ambacht met moderne technieken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-header">
+    <div class="section-label reveal">De mensen achter Destino</div>
+    <h2 class="section-title reveal">Ons <strong>team</strong></h2>
+  </div>
+  <div class="team-grid">
+
+    <div class="team-card reveal">
+      <div class="team-img">
+        <div class="team-img-ph" style="background:linear-gradient(135deg,#0d1f3c,#1a3048);">
+          <svg viewBox="0 0 80 100" style="width:55%;opacity:0.12;" fill="white">
+            <circle cx="40" cy="28" r="22"/>
+            <path d="M5 100 Q5 65 40 65 Q75 65 75 100"/>
+          </svg>
+        </div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Carlos Ramos</div>
+        <div class="team-role">Oprichter & Directeur</div>
+        <p class="team-bio">Met meer dan 20 jaar ervaring in de bouwsector is Carlos de drijvende kracht achter Destino. Zijn passie voor kwaliteit en oog voor detail vormen de basis van het bedrijf.</p>
+        <div class="team-socials">
+          <a href="#" class="team-soc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:c.ramos@bouwbedrijfdestino.nl" class="team-soc" aria-label="Email"><i class="fa fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card reveal">
+      <div class="team-img">
+        <div class="team-img-ph" style="background:linear-gradient(135deg,#1a1a10,#2a2a18);">
+          <svg viewBox="0 0 80 100" style="width:55%;opacity:0.12;" fill="white">
+            <circle cx="40" cy="28" r="22"/>
+            <path d="M5 100 Q5 65 40 65 Q75 65 75 100"/>
+          </svg>
+        </div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Maria Costa</div>
+        <div class="team-role">Projectmanager</div>
+        <p class="team-bio">Maria coördineert elk project van A tot Z. Zij zorgt voor een soepele samenwerking tussen opdrachtgever, architect en uitvoerend team.</p>
+        <div class="team-socials">
+          <a href="#" class="team-soc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:m.costa@bouwbedrijfdestino.nl" class="team-soc" aria-label="Email"><i class="fa fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card reveal">
+      <div class="team-img">
+        <div class="team-img-ph" style="background:linear-gradient(135deg,#102010,#182818);">
+          <svg viewBox="0 0 80 100" style="width:55%;opacity:0.12;" fill="white">
+            <circle cx="40" cy="28" r="22"/>
+            <path d="M5 100 Q5 65 40 65 Q75 65 75 100"/>
+          </svg>
+        </div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Thomas Bakker</div>
+        <div class="team-role">Hoofd Uitvoering</div>
+        <p class="team-bio">Thomas leidt het uitvoerend team op de bouwplaats. Met zijn achtergrond in constructietechniek bewaakt hij kwaliteit en planning op elk project.</p>
+        <div class="team-socials">
+          <a href="#" class="team-soc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:t.bakker@bouwbedrijfdestino.nl" class="team-soc" aria-label="Email"><i class="fa fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partners-label">Onze vaste partners &amp; leveranciers</div>
+  <div class="partners-row">
+    <div class="partner-item">Knauf</div>
+    <div class="partner-item">Remeha</div>
+    <div class="partner-item">Velux</div>
+    <div class="partner-item">Grohe</div>
+    <div class="partner-item">Isover</div>
+    <div class="partner-item">Schüco</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="section-label reveal" style="color:rgba(255,255,255,0.4);">Klaar om te starten?</div>
+    <h2 class="cta-title reveal">Vraag vrijblijvend een <strong>offerte</strong> aan</h2>
+    <p class="cta-sub reveal">Vertel ons over uw project en wij nemen snel contact met u op voor een persoonlijk gesprek.</p>
+    <a href="mailto:c.ramos@bouwbedrijfdestino.nl" class="cta-btn reveal">
+      <span>Stuur ons een bericht</span>
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer" class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:20px;">
+        <svg viewBox="0 0 52 60" fill="none" style="width:32px;height:32px;">
+          <rect x="0" y="20" width="14" height="40" fill="#C0392B"/>
+          <rect x="19" y="10" width="14" height="50" fill="#C0392B"/>
+          <rect x="38" y="0" width="14" height="60" fill="#C0392B"/>
+        </svg>
+        <div class="nav-logo-text">
+          <p>Bouwbedrijf</p>
+          <p>Destino</p>
+        </div>
       </a>
+      <p class="footer-tagline">Exclusieve bouw en renovatie in de regio Diemen. Kwaliteit die spreekt voor zichzelf.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.7a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigatie</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="overons.html">Over ons</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Diensten</div>
+      <ul class="footer-links">
+        <li><a href="diensten.html">Nieuwbouw</a></li>
+        <li><a href="diensten.html">Renovatie</a></li>
+        <li><a href="diensten.html">Uitbouw</a></li>
+        <li><a href="diensten.html">Interieur</a></li>
+        <li><a href="diensten.html">Duurzame bouw</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-item">
+        <i class="fa fa-map-marker-alt"></i>
+        <span>Julianaplantsoen 197<br>1111 XL Diemen</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa fa-phone"></i>
+        <a href="tel:+31630302695">+31 6 3030 2695</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:c.ramos@bouwbedrijfdestino.nl">c.ramos@bouwbedrijfdestino.nl</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+        <a href="https://wa.me/31630302695">WhatsApp ons</a>
+      </div>
     </div>
   </div>
-</section>
-
-<footer class="footer">
-    <div class="footer-container">
-
-        <div class="footer-col">
-            <h3>Bouwbedrijf Destino B.V.</h3>
-            <p>Uw partner voor nieuwbouw, renovatie, verbouwingen en maatwerkprojecten.</p>
-        </div>
-
-        <div class="footer-col">
-            <h3>Snelle Links</h3>
-            <ul>
-                <li><a href="overons.html">Over ons</a></li>
-                <li><a href="diensten.html">Diensten</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Contact</h3>
-            <p><i class="fa-solid fa-phone"></i> 06 - 30302695</p>
-            <p><i class="fa-solid fa-envelope"></i><a href="mailto:info@destinobouw.nl">info@destinobouw.nl</p>
-            <p><i class="fa-solid fa-location-dot"></i>Julianaplantsoen 197 1111XLDiemen, Nederland</p>
-        </div>
-
-        <div class="footer-col">
-            <h3>Volg ons</h3>
-            <a href="https://www.tiktok.com/@bouwbv.destino" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
-        </div>
-
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Bouwbedrijf Destino B.V. — Alle rechten voorbehouden.</div>
+    <div class="footer-legal">
+      <a href="#">Privacybeleid</a>
+      <a href="#">Algemene voorwaarden</a>
+      <a href="#">KvK: 12345678</a>
     </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.</p>
-    </div>
+  </div>
 </footer>
-    
-    <div class="whatsapp-btn" id="whatsappBtn" title="Chat via WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="whatsapp-icon">
-      <path d="M256 0C114.6 0 0 114.6 0 256c0 45.4 11.9 89.4 34.6 128.1L0 512l132.5-33.5C172.3 498.3 214.3 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0zM256 470c-38.6 0-76.4-10.4-109.3-30l-7.8-4.6-78.7 20 21-81.3-5-7.8C56 329.7 44 293.9 44 256 44 138.5 138.5 44 256 44s212 94.5 212 212-94.5 214-212 214zm119.2-146.9c-6.5-3.2-38.3-19.3-44.2-21.5s-10.3-3.2-14.7 3.2c-4.4 6.5-17.1 21.5-20.9 25.9s-7.7 4.8-14.1 1.6c-38.3-19.3-63.4-34.6-88.3-77.3-6.5-11.3 6.5-10.5 18.6-34.6 2.1-4.8 1-8.9-.5-12.1-1.6-3.2-14.7-35.6-20.2-48.9-5.3-12.6-10.7-10.8-14.7-11-3.7-.2-8.1-.2-12.5-.2-4.4 0-11.7 1.6-17.8 8.1s-23.4 22.9-23.4 55.8 24 64.6 27.4 69.1c3.2 4.5 47.3 72.3 115.1 101.6 42.7 18.4 59.4 20 80.7 16.8 12.9-2.1 38.3-15.6 43.7-30.7 5.5-15.1 5.5-28 3.9-30.7-1.6-2.9-5.9-4.7-12.5-7.9z"/>
-    </svg>
-  </div>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <a href="https://wa.me/31630302695" class="wa-btn" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close"><i class="fa fa-times"></i></button>
+  <img src="" alt="" id="lightbox-img">
+</div>
 
 <script src="js/script.js"></script>
 
+<!-- PAGINA-SPECIFIEKE JS — voeg toe aan js/script.js -->
 <script>
-  // === TRANSLATIONS ===
-  const translations = {
-    nl: {
-      'page-title': 'Over ons - Bouwbedrijf Destino B.V.',
-      'site-name': 'Bouwbedrijf Destino B.V.',
-      'nav-home': 'Home',
-      'nav-about': 'Over ons',
-      'nav-services': 'Diensten',
-      'nav-portfolio': 'Portfolio',
-      'nav-contact': 'Contact',
-      'hero-title': 'Over ons',
-      'hero-subtitle': 'Wij zijn Bouwbedrijf Destino B.V. – gespecialiseerd in luxe woningbouw op maat.',
-      'about-heading': 'Over Ons',
-      'about-p1': 'Wij staan voor exclusieve bouwprojecten waarin luxe, esthetiek en vakmanschap samensmelten tot één geheel.',
-      'about-p2': 'Onze kracht ligt in het begrijpen van de essentie van luxe — niet in overdaad, maar in perfectie tot in het kleinste detail.',
-      'about-p3': 'Vakmanschap vormt de basis van ons werk. Onze ervaren specialisten combineren traditionele technieken met moderne bouwmethoden.',
-      'about-p4': 'Wij geloven dat bouwen meer is dan constructie; het is een vorm van kunst en beleving.',
-      'about-signature': 'Wij bouwen met passie, creëren met visie en leveren met trots. Dat is de essentie van ons vak.',
-      'mission-heading': 'Onze Missie',
-      'mission-text': 'Bij Bouwbedrijf Destino B.V. geloven we dat elk huis een kunstwerk verdient te zijn. Met meer dan 25 jaar ervaring combineren we vakmanschap, innovatie en duurzame materialen.',
-      'team-heading': 'Ons Team',
-      'team-text': 'Ons toegewijde team van architecten, bouwkundigen en interieurontwerpers werkt nauw samen met u om elk detail van uw droomhuis perfect te maken.',
-      'footer-text': '© 2025 Bouwbedrijf Destino B.V. Alle rechten voorbehouden.',
-      'lang-nl': 'NL',
-      'lang-en': 'EN',
-      'lang-ar': 'AR'
-    },
-    en: {
-      'page-title': 'About Us - Destino Construction Ltd.',
-      'site-name': 'Destino Construction Ltd.',
-      'nav-home': 'Home',
-      'nav-about': 'About Us',
-      'nav-services': 'Services',
-      'nav-portfolio': 'Portfolio',
-      'nav-contact': 'Contact',
-      'hero-title': 'About Us',
-      'hero-subtitle': 'We are Destino Construction – specialists in luxury custom home building.',
-      'about-heading': 'About Us',
-      'about-p1': 'We stand for exclusive building projects where luxury, aesthetics, and craftsmanship merge into one.',
-      'about-p2': 'Our strength lies in understanding the essence of luxury — not excess, but perfection down to the smallest detail.',
-      'about-p3': 'Craftsmanship forms the foundation of our work. Our experienced specialists combine traditional techniques with modern building methods.',
-      'about-p4': 'We believe building is more than construction; it is an art form and experience.',
-      'about-signature': 'We build with passion, create with vision, and deliver with pride. That is the essence of our craft.',
-      'mission-heading': 'Our Mission',
-      'mission-text': 'At Destino Construction, we believe every home deserves to be a masterpiece. With over 25 years of experience, we combine craftsmanship, innovation, and sustainability.',
-      'team-heading': 'Our Team',
-      'team-text': 'Our dedicated team of architects, engineers, and designers work closely with you to perfect every detail of your dream home.',
-      'footer-text': '© 2025 Destino Construction Ltd. All rights reserved.',
-      'lang-nl': 'NL',
-      'lang-en': 'EN',
-      'lang-ar': 'AR'
-    },
-    ar: {
-      'page-title': 'معلومات عنا - شركة ديستينو للبناء',
-      'site-name': 'شركة ديستينو للبناء',
-      'nav-home': 'الرئيسية',
-      'nav-about': 'معلومات عنا',
-      'nav-services': 'الخدمات',
-      'nav-portfolio': 'المعرض',
-      'nav-contact': 'اتصل بنا',
-      'hero-title': 'معلومات عنا',
-      'hero-subtitle': 'نحن شركة ديستينو للبناء – متخصصون في بناء المنازل الفاخرة حسب الطلب.',
-      'about-heading': 'من نحن',
-      'about-p1': 'نحن نقدم مشاريع بناء حصرية تجمع بين الفخامة والجمال والحرفية.',
-      'about-p2': 'تكمن قوتنا في فهم جوهر الفخامة — ليست في المبالغة، بل في الكمال في أدق التفاصيل.',
-      'about-p3': 'تشكل الحرفية أساس عملنا. يجمع خبراؤنا بين التقنيات التقليدية والأساليب الحديثة.',
-      'about-p4': 'نؤمن أن البناء أكثر من مجرد إنشاء؛ إنه فن وتجربة.',
-      'about-signature': 'نحن نبني بشغف، نبدع برؤية، ونفخر بما نقدم. هذه هي جوهر مهنتنا.',
-      'mission-heading': 'مهمتنا',
-      'mission-text': 'نؤمن في شركة ديستينو للبناء أن كل منزل يستحق أن يكون عملاً فنياً. بخبرة تزيد عن 25 عاماً نجمع بين الحرفية والابتكار والاستدامة.',
-      'team-heading': 'فريقنا',
-      'team-text': 'يعمل فريقنا المتفاني من المهندسين والمعماريين والمصممين معك عن كثب لإتقان كل تفصيل في منزلك الحلم.',
-      'footer-text': '© 2025 شركة ديستينو للبناء. جميع الحقوق محفوظة.',
-      'lang-nl': 'NL',
-      'lang-en': 'EN',
-      'lang-ar': 'AR'
-    }
-  };
-
-  function setLanguage(lang) {
-    document.querySelectorAll('[data-key]').forEach(el => {
-      const key = el.getAttribute('data-key');
-      if (translations[lang][key]) el.innerText = translations[lang][key];
-    });
-    if (lang === 'ar') {
-      document.body.setAttribute('dir', 'rtl');
-    } else {
-      document.body.removeAttribute('dir');
-    }
+  // Timeline spine animatie (scroll-triggered)
+  const spine = document.getElementById('timelineSpine');
+  if (spine) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) spine.classList.add('animate'); });
+    }, { threshold: 0.1 });
+    obs.observe(spine);
   }
-  </script>
+</script>
+
 </body>
-
 </html>
-
-
-
