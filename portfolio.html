@@ -662,7 +662,382 @@
   <img src="" alt="" id="lightbox-img">
 </div>
 
-<script src="js/script.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// ─── CURSOR ───────────────────────────────────────────────────────────────────
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+document.querySelectorAll('a, button, .carousel-card, .gg-item, .service-card, .project-card')
+  .forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+  });
+
+function animCursor() {
+  rx += (mx - rx) * 0.15;
+  ry += (my - ry) * 0.15;
+  if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
+  if (cursorRing) { cursorRing.style.left = rx + 'px'; cursorRing.style.top = ry + 'px'; }
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+
+// ─── HERO CANVAS (particle network) ──────────────────────────────────────────
+const heroCanvas = document.getElementById('heroCanvas');
+if (heroCanvas) {
+  const hCtx = heroCanvas.getContext('2d');
+  let hParticles = [];
+
+  function resizeHeroCanvas() {
+    heroCanvas.width = heroCanvas.offsetWidth;
+    heroCanvas.height = heroCanvas.offsetHeight;
+  }
+  resizeHeroCanvas();
+  window.addEventListener('resize', resizeHeroCanvas);
+
+  for (let i = 0; i < 60; i++) {
+    hParticles.push({
+      x: Math.random() * heroCanvas.width,
+      y: Math.random() * heroCanvas.height,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.6 + 0.1
+    });
+  }
+
+  function drawHeroCanvas() {
+    hCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+    hParticles.forEach((p, i) => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > heroCanvas.width)  p.vx *= -1;
+      if (p.y < 0 || p.y > heroCanvas.height) p.vy *= -1;
+
+      hCtx.beginPath();
+      hCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      hCtx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+      hCtx.fill();
+
+      for (let j = i + 1; j < hParticles.length; j++) {
+        const dx = hParticles[j].x - p.x;
+        const dy = hParticles[j].y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          hCtx.beginPath();
+          hCtx.moveTo(p.x, p.y);
+          hCtx.lineTo(hParticles[j].x, hParticles[j].y);
+          hCtx.strokeStyle = `rgba(255,255,255,${(1 - dist / 120) * 0.06})`;
+          hCtx.lineWidth = 0.5;
+          hCtx.stroke();
+        }
+      }
+    });
+    requestAnimationFrame(drawHeroCanvas);
+  }
+  drawHeroCanvas();
+}
+
+// ─── PRELOADER ────────────────────────────────────────────────────────────────
+const preloader = document.getElementById('preloader');
+const pbar      = document.getElementById('pbar');
+const ppct      = document.getElementById('ppct');
+const plogo     = document.querySelector('.preloader-logo');
+const pbarWrap  = document.querySelector('.preloader-bar-wrap');
+
+if (preloader && plogo) {
+  const tl = gsap.timeline();
+  tl.to(plogo,  { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+    .to([pbarWrap, ppct], { opacity: 1, duration: 0.4 }, '-=0.3')
+    .to(pbar, {
+        left: '0%', duration: 1.4, ease: 'power2.inOut',
+        onUpdate: function () {
+          if (ppct) ppct.textContent = Math.round(this.progress() * 100) + '%';
+        }
+      }, '-=0.1')
+    .to(preloader, {
+        opacity: 0, duration: 0.7, ease: 'power2.inOut', delay: 0.2,
+        onComplete: () => {
+          preloader.style.display = 'none';
+          initAnimations();
+        }
+      });
+} else {
+  // geen preloader aanwezig — start animaties direct
+  initAnimations();
+}
+
+// ─── INIT ANIMATIONS (na preloader) ──────────────────────────────────────────
+function initAnimations() {
+
+  // Hero entrance
+  const heroTl = gsap.timeline({ delay: 0.1 });
+  heroTl
+    .to('.hero-label',       { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+    .to('.hero-title',       { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.5')
+    .to('.hero-sub',         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+    .to('.hero-btns',        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
+    .to('.hero-stats',       { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4')
+    .to('.hero-scroll-hint', { opacity: 1,        duration: 0.6 }, '-=0.2');
+
+  // Hero counter
+  document.querySelectorAll('.count').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    gsap.to({ val: 0 }, {
+      val: target, duration: 2, delay: 1.5, ease: 'power2.out',
+      onUpdate: function () { el.textContent = Math.round(this.targets()[0].val); }
+    });
+  });
+
+  // Interlude counter
+  document.querySelectorAll('.cnt2').forEach(el => {
+    const target = parseInt(el.dataset.t);
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 90%',
+      once: true,
+      onEnter: () => {
+        gsap.to({ val: 0 }, {
+          val: target, duration: 2, ease: 'power2.out',
+          onUpdate: function () { el.textContent = Math.round(this.targets()[0].val); }
+        });
+      }
+    });
+  });
+
+  // Scroll-reveal elements
+  gsap.utils.toArray('.reveal-fade').forEach((el, i) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+        delay: (i % 3) * 0.08,
+        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+}
+
+// ─── NAVBAR ───────────────────────────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+document.querySelectorAll('.nav-link, .nav-logo, .nav-cta').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) gsap.to(window, { duration: 1, scrollTo: { y: target, offsetY: 80 }, ease: 'power3.inOut' });
+    }
+  });
+});
+
+// ─── HAMBURGER / MOBILE MENU ──────────────────────────────────────────────────
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileItems = document.querySelectorAll('.mobile-nav-item');
+const mobileLang  = document.querySelector('.mobile-lang');
+let menuOpen = false;
+
+function closeMenu() {
+  menuOpen = false;
+  if (mobileMenu) mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+  const spans = hamburger.querySelectorAll('span');
+  gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
+  gsap.to(spans[1], { opacity: 1,         duration: 0.3 });
+  gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.3 });
+  if (mobileLang) gsap.to([...mobileItems, mobileLang], { opacity: 0, y: 20, duration: 0.3 });
+  else             gsap.to(mobileItems,                  { opacity: 0, y: 20, duration: 0.3 });
+}
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    const spans = hamburger.querySelectorAll('span');
+    if (menuOpen) {
+      if (mobileMenu) mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      gsap.to(spans[0], { rotation: 45,  y:  6.5, duration: 0.3 });
+      gsap.to(spans[1], { opacity: 0,             duration: 0.2 });
+      gsap.to(spans[2], { rotation: -45, y: -6.5, duration: 0.3 });
+      gsap.to(mobileItems, { opacity: 1, y: 0, stagger: 0.07, duration: 0.5, ease: 'power3.out', delay: 0.1 });
+      if (mobileLang) gsap.to(mobileLang, { opacity: 1, y: 0, duration: 0.5, delay: 0.45 });
+    } else {
+      closeMenu();
+    }
+  });
+}
+
+mobileItems.forEach(item => {
+  item.addEventListener('click', () => {
+    closeMenu();
+    const href = item.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) setTimeout(() => gsap.to(window, { duration: 1, scrollTo: { y: target, offsetY: 80 }, ease: 'power3.inOut' }), 300);
+    }
+  });
+});
+
+// ─── LANGUAGE SWITCHER ────────────────────────────────────────────────────────
+document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // deactivate siblings in same group
+    btn.closest('.lang-switcher, .mobile-lang')
+       ?.querySelectorAll('button')
+       .forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ─── PARALLAX (hero title + image on mousemove) ───────────────────────────────
+document.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth  - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+  gsap.to('.hero-title',        { x: x * 0.4, y: y * 0.3, duration: 1,   ease: 'power1.out' });
+  gsap.to('.hero-img-wrap img', { x: x * 0.6, y: y * 0.4, duration: 1.2, ease: 'power1.out' });
+});
+
+// ─── PROJECT FILTER ───────────────────────────────────────────────────────────
+const filterTabs = document.querySelectorAll('.filter-tab');
+const projectCards = document.querySelectorAll('.project-card');
+const noResults = document.getElementById('noResults');
+const projCount = document.getElementById('projCount');
+
+filterTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    filterTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const f = tab.dataset.f;
+    let visible = 0;
+    projectCards.forEach(card => {
+      const match = f === 'all' || card.dataset.cat === f;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+    if (projCount) {
+      const label = tab.textContent.trim();
+      projCount.innerHTML = `${label} — <strong>${visible}</strong> realisatie${visible !== 1 ? 's' : ''}`;
+    }
+  });
+});
+
+// ─── CATEGORY LIST (intro section) ───────────────────────────────────────────
+document.querySelectorAll('.cat-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const f = item.dataset.filter;
+    // trigger matching filter tab
+    const matchTab = [...filterTabs].find(t => t.dataset.f === f);
+    if (matchTab) {
+      matchTab.click();
+      const filtersEl = document.getElementById('filters');
+      if (filtersEl) gsap.to(window, { duration: 0.8, scrollTo: { y: filtersEl, offsetY: 80 }, ease: 'power3.inOut' });
+    }
+  });
+});
+
+// ─── PROJECT CARD EXPAND ──────────────────────────────────────────────────────
+const expandBtns = document.querySelectorAll('.card-expand-btn');
+expandBtns.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = btn.closest('.project-card');
+    if (!card) return;
+    openProjectModal(card);
+  });
+});
+
+// Also allow clicking anywhere on card
+projectCards.forEach(card => {
+  card.addEventListener('click', () => openProjectModal(card));
+});
+
+function openProjectModal(card) {
+  const title    = card.dataset.title    || '';
+  const location = card.dataset.location || '';
+  const area     = card.dataset.area     || '';
+  const type     = card.dataset.type     || '';
+  const year     = card.dataset.year     || '';
+  const desc     = card.dataset.desc     || '';
+
+  // reuse lightbox element
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+
+  // swap lightbox content for project info
+  lb.innerHTML = `
+    <button id="lightbox-close" style="position:fixed;top:24px;right:28px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;z-index:10001;">&#x2715;</button>
+    <div style="background:#0d1f3c;border:1px solid rgba(192,57,43,.3);border-radius:4px;padding:48px 52px;max-width:680px;width:90%;position:relative;z-index:10001;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#C0392B;margin-bottom:16px;">${type} · ${year}</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,46px);color:#fff;margin-bottom:8px;line-height:1.1;">${title}</h2>
+      <div style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:28px;letter-spacing:1px;">${location} &nbsp;·&nbsp; ${area}</div>
+      <hr style="border:none;border-top:1px solid rgba(192,57,43,.25);margin-bottom:28px;">
+      <p style="font-family:'Barlow',sans-serif;font-size:15px;color:rgba(255,255,255,.75);line-height:1.8;">${desc}</p>
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:10px;margin-top:32px;padding:14px 28px;background:#C0392B;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;">
+        Bespreek uw project <i class="fa fa-arrow-right"></i>
+      </a>
+    </div>
+  `;
+
+  lb.classList.add('open');
+
+  lb.querySelector('#lightbox-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+}
+
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ─── CONTACT FORM ─────────────────────────────────────────────────────────────
+const form      = document.getElementById('contactForm');
+const successEl = document.getElementById('formSuccess');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    form.style.transition = 'opacity .5s, transform .5s';
+    form.style.opacity    = '0';
+    form.style.transform  = 'translateY(-20px)';
+    setTimeout(() => {
+      form.style.display = 'none';
+      if (successEl) {
+        successEl.style.display  = 'flex';
+        setTimeout(() => successEl.style.opacity = '1', 50);
+      }
+    }, 500);
+  });
+}
+
+// ─── MOBILE NAV: prepend number labels ───────────────────────────────────────
+document.querySelectorAll('.mobile-nav-item').forEach((item, i) => {
+  const num = document.createElement('span');
+  num.style.cssText = `
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.18);
+    margin-right: 20px;
+    vertical-align: middle;
+  `;
+  num.textContent = String(i + 1).padStart(2, '0');
+  item.prepend(num);
+});
+</script>
 
 </body>
 </html>
