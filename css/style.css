@@ -12,9 +12,9 @@
    ──────────────────────────────────────────────────────────────── */
 :root {
   --white:       #ffffff;
-  --navy:        #0d1f3c;
-  --navy-deep:   #081526;
-  --navy-mid:    #132944;
+  --navy:        #1a335c;   /* was #0d1f3c */
+  --navy-deep:   #102449;   /* was #081526 */
+  --navy-mid:    #25406a;   /* was #132944 */
   --red:         #c0392b;
   --red-light:   #e74c3c;
   --grey:        #8a9ab0;
