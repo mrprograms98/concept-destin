@@ -147,6 +147,185 @@
     </div>
     <div class="hero-img-overlay"></div>
   </div>
+  
+<!-- ============================================================
+     DESTINO — HERO SIDEBAR NAV + ANIMATIEGALERIJ
+     Plak dit BINNEN de bestaande <section id="hero"> ...
+     VERVANG de huidige .hero-content div door dit blok,
+     of voeg het toe naast de bestaande hero-content.
+     ============================================================ -->
+
+<!-- SIDEBAR NAVIGATIE (links) -->
+<nav class="hero-sidenav">
+  <a href="index.html" class="hsn-item active">
+    <span class="hsn-num">01</span>
+    <span class="hsn-label">Home</span>
+    <span class="hsn-line"></span>
+  </a>
+  <a href="overons.html" class="hsn-item">
+    <span class="hsn-num">02</span>
+    <span class="hsn-label">Over ons</span>
+    <span class="hsn-line"></span>
+  </a>
+  <a href="diensten.html" class="hsn-item">
+    <span class="hsn-num">03</span>
+    <span class="hsn-label">Diensten</span>
+    <span class="hsn-line"></span>
+  </a>
+  <a href="portfolio.html" class="hsn-item">
+    <span class="hsn-num">04</span>
+    <span class="hsn-label">Portfolio</span>
+    <span class="hsn-line"></span>
+  </a>
+  <a href="contact.html" class="hsn-item">
+    <span class="hsn-num">05</span>
+    <span class="hsn-label">Contact</span>
+    <span class="hsn-line"></span>
+  </a>
+</nav>
+
+<!-- HERO GALERIJ (midden/rechts) -->
+<div class="hero-gallery-wrap" id="heroGallery">
+
+  <!-- Slide 1 -->
+  <div class="hg-slide active">
+    <div class="hg-img-wrap">
+      <!-- Vervang src door je eigen projectfoto -->
+      <img src="images/project1.jpg" alt="Luxe Villa Diemen" class="hg-img">
+      <!-- Fallback placeholder als foto ontbreekt -->
+      <div class="hg-placeholder p-blue">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="80" width="50" height="120" fill="rgba(255,255,255,0.08)"/>
+          <rect x="90" y="50" width="50" height="150" fill="rgba(255,255,255,0.08)"/>
+          <rect x="160" y="20" width="30" height="180" fill="rgba(255,255,255,0.08)"/>
+          <rect x="20" y="160" width="170" height="8" fill="rgba(255,255,255,0.06)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hg-info">
+      <div class="hg-cat">Nieuwbouw</div>
+      <div class="hg-title">Luxe Villa Diemen</div>
+      <div class="hg-meta">2024 · 480 m²</div>
+    </div>
+    <div class="hg-overlay"></div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="hg-slide">
+    <div class="hg-img-wrap">
+      <img src="images/project2.jpg" alt="Klassiek Herenhuis" class="hg-img">
+      <div class="hg-placeholder p-dark">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="60" width="140" height="140" fill="rgba(255,255,255,0.06)"/>
+          <polygon points="30,60 100,10 170,60" fill="rgba(255,255,255,0.09)"/>
+          <rect x="75" y="120" width="50" height="80" fill="rgba(255,255,255,0.08)"/>
+          <rect x="45" y="80" width="30" height="30" fill="rgba(255,255,255,0.05)"/>
+          <rect x="125" y="80" width="30" height="30" fill="rgba(255,255,255,0.05)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hg-info">
+      <div class="hg-cat">Renovatie</div>
+      <div class="hg-title">Klassiek Herenhuis</div>
+      <div class="hg-meta">2023 · 320 m²</div>
+    </div>
+    <div class="hg-overlay"></div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="hg-slide">
+    <div class="hg-img-wrap">
+      <img src="images/project3.jpg" alt="Moderne Woonextensie" class="hg-img">
+      <div class="hg-placeholder p-warm">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="180" height="180" rx="2" fill="rgba(255,255,255,0.04)"/>
+          <rect x="20" y="20" width="80" height="80" fill="rgba(255,255,255,0.08)"/>
+          <rect x="110" y="20" width="80" height="80" fill="rgba(255,255,255,0.06)"/>
+          <rect x="20" y="110" width="170" height="70" fill="rgba(255,255,255,0.07)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hg-info">
+      <div class="hg-cat">Uitbouw</div>
+      <div class="hg-title">Moderne Woonextensie</div>
+      <div class="hg-meta">2024 · 85 m²</div>
+    </div>
+    <div class="hg-overlay"></div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="hg-slide">
+    <div class="hg-img-wrap">
+      <img src="images/project4.jpg" alt="Maatwerk Interieur" class="hg-img">
+      <div class="hg-placeholder p-deep">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="60" width="160" height="120" fill="rgba(255,255,255,0.06)"/>
+          <rect x="30" y="70" width="60" height="50" fill="rgba(255,255,255,0.08)"/>
+          <rect x="100" y="70" width="70" height="80" fill="rgba(255,255,255,0.07)"/>
+          <rect x="20" y="150" width="160" height="10" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="60" cy="185" rx="25" ry="8" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="140" cy="185" rx="25" ry="8" fill="rgba(255,255,255,0.05)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hg-info">
+      <div class="hg-cat">Interieur</div>
+      <div class="hg-title">Maatwerk Interieur</div>
+      <div class="hg-meta">2023 · Volledig maatwerk</div>
+    </div>
+    <div class="hg-overlay"></div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="hg-slide">
+    <div class="hg-img-wrap">
+      <img src="images/project5.jpg" alt="Energieneutrale Woning" class="hg-img">
+      <div class="hg-placeholder p-green">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="100" width="140" height="90" fill="rgba(255,255,255,0.07)"/>
+          <polygon points="15,100 100,30 185,100" fill="rgba(255,255,255,0.09)"/>
+          <rect x="60" y="130" width="35" height="60" fill="rgba(255,255,255,0.06)"/>
+          <rect x="110" y="110" width="40" height="30" fill="rgba(255,255,255,0.05)"/>
+          <line x1="85" y1="0" x2="100" y2="30" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hg-info">
+      <div class="hg-cat">Duurzaam</div>
+      <div class="hg-title">Energieneutrale Woning</div>
+      <div class="hg-meta">2024 · A++++ label</div>
+    </div>
+    <div class="hg-overlay"></div>
+  </div>
+
+  <!-- Voortgangsbalk + paginering -->
+  <div class="hg-controls">
+    <div class="hg-dots" id="hgDots">
+      <button class="hg-dot active" data-index="0"></button>
+      <button class="hg-dot" data-index="1"></button>
+      <button class="hg-dot" data-index="2"></button>
+      <button class="hg-dot" data-index="3"></button>
+      <button class="hg-dot" data-index="4"></button>
+    </div>
+    <div class="hg-timer-bar">
+      <div class="hg-timer-fill" id="hgTimer"></div>
+    </div>
+    <div class="hg-counter">
+      <span id="hgCurrent">01</span>
+      <span class="hg-slash">/</span>
+      <span class="hg-total">05</span>
+    </div>
+  </div>
+
+  <!-- Pijl-knoppen -->
+  <button class="hg-arrow hg-arrow-prev" id="hgPrev" aria-label="Vorige">
+    <i class="fa fa-arrow-left"></i>
+  </button>
+  <button class="hg-arrow hg-arrow-next" id="hgNext" aria-label="Volgende">
+    <i class="fa fa-arrow-right"></i>
+  </button>
+
+</div><!-- /.hero-gallery-wrap -->
   <div class="hero-content">
     <div class="hero-label">Exclusieve Bouw — Diemen</div>
     <h1 class="hero-title">
@@ -466,6 +645,73 @@
 </div>
 
 <script src="js/script.js"></script>
+<script>
+(function () {
+  const slides   = document.querySelectorAll('.hg-slide');
+  const dots     = document.querySelectorAll('.hg-dot');
+  const timer    = document.getElementById('hgTimer');
+  const counter  = document.getElementById('hgCurrent');
+  const prevBtn  = document.getElementById('hgPrev');
+  const nextBtn  = document.getElementById('hgNext');
+
+  if (!slides.length) return;
+
+  const INTERVAL = 25000; // 25 seconden per slide
+  let current    = 0;
+  let countdown  = null;
+  let startTime  = null;
+  let paused     = false;
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    counter.textContent = pad(current + 1);
+
+    resetTimer();
+  }
+
+  function resetTimer() {
+    if (timer) {
+      timer.style.transition = 'none';
+      timer.style.width = '0%';
+      void timer.offsetWidth; // reflow
+      timer.style.transition = 'width ' + INTERVAL + 'ms linear';
+      timer.style.width = '100%';
+    }
+    clearInterval(countdown);
+    startTime = Date.now();
+    countdown = setInterval(() => {
+      if (!paused) goTo(current + 1);
+    }, INTERVAL);
+  }
+
+  // Dot-knoppen
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => goTo(i));
+  });
+
+  // Pijl-knoppen
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Pauzeer bij hover op de galerij
+  const wrap = document.getElementById('heroGallery');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', () => { paused = true; });
+    wrap.addEventListener('mouseleave', () => { paused = false; });
+  }
+
+  // Start
+  resetTimer();
+})();
+</script>
 
 </body>
 </html>
